@@ -1,9 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
+import VideoModal from "@/components/VideoModal";
 
 export default function Home() {
   // State for client-side rendering to avoid hydration mismatch
   const [currentYear, setCurrentYear] = useState("2023");
+  // State to control the video modal
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   // Update year after component mounts on client side
   useEffect(() => {
@@ -15,49 +18,39 @@ export default function Home() {
     {
       id: 1,
       title: "Rudarz.com",
-      description:
-        "Professional evergreen guide for the Balance Druid specialization in World of Warcraft. 5 years of coaching experience, iteration, and sweat went into this guide.",
+      description: "The #1 Balance Druid PvP Guide.",
       tags: ["React", "Tailwind CSS", "TypeScript"],
       image: "/Project-Images/Rudarz.com.png",
     },
     {
       id: 2,
-      title: "AI Shot Detection",
-      description:
-        "Android Mobile App using AI to detect in real-time when a player has made or missed a basketball shot. Backend focused.",
+      title: "AI Shot Detection App",
+      description: "AI basketball shot make/miss Android app.",
       tags: ["Google MediaPipe", "Roboflow", "Kotlin"],
       image: "/Project-Images/ai-shot-tracker.png",
     },
-    {
-      id: 3,
-      title: "AutoVideos",
-      description:
-        "Automatic video creation pipeline that generates highlight reels from a collection of twitch clips.",
-      tags: ["FFmpeg", "Python", "Google APIs"],
-      image: "/Project-Images/AutoVideos.png",
-    },
+    // {
+    //   id: 3,
+    //   title: "AutoVideos",
+    //   description: "Semi-automatic Twitch clip to YouTube video generator.",
+    //   tags: ["FFmpeg", "Python", "Google APIs"],
+    //   image: "/Project-Images/AutoVideos.png",
+    // },
     {
       id: 4,
-      title: "Lockout",
-      description:
-        "Fake casting addon for predicting interrupts in World of Warcraft.",
-      tags: ["Lua"],
-      image: "/Project-Images/Lockout.png",
+      title: "WoW Stats",
+      description: "Player percentile and custom score calculator for WoW.",
+      tags: ["Typescript"],
+      image: "/Project-Images/wow-stats.png", // This image will show behind the play button
     },
     {
       id: 5,
-      title: "Strategist",
-      description:
-        "Addon for mapping strategies to matchup's. Never forget what to do.",
+      title: "Lockout",
+      description: "Fake casting addon for predicting interrupts in WoW.",
       tags: ["Lua"],
-      image: "/Project-Images/Strategist.png",
-    },
-    {
-      id: 6,
-      title: "Video Editing",
-      description: "Editing for YouTube Channels: Palumor, Mvq, and Rudarz.",
-      tags: ["Filmora", "Adobe Premiere Pro", "Photoshop"],
-      image: "/Project-Images/Editing.png",
+      image: "/Project-Images/Lockout.png", // This image will show behind the play button
+      hasVideo: true,
+      videoId: "I7wh98YY7cg",
     },
   ];
 
@@ -72,13 +65,6 @@ export default function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-block mb-3">
-            <div className="h-1 w-20 bg-blue-500 mx-auto mb-6"></div>
-            <h2 className="text-blue-400 text-lg font-medium tracking-wider uppercase">
-              Portfolio
-            </h2>
-          </div>
-
           <h1 className="text-6xl font-bold text-white mb-4 tracking-tight">
             Ethan Rule
           </h1>
@@ -114,29 +100,52 @@ export default function Home() {
               </svg>
               <span>LinkedIn</span>
             </a>
+            <a
+              href="https://leetcode.com/u/Rudar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-zinc-800 hover:bg-zinc-700 text-white px-5 py-2 rounded-md transition-colors duration-300 flex items-center space-x-2"
+            >
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
+              </svg>
+              <span>LeetCode</span>
+            </a>
           </div>
         </div>
       </header>
 
       {/* Projects Grid */}
       <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h1 className="pb-4 text-4xl font-bold">Projects</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <div
               key={project.id}
               className="bg-zinc-900 rounded-lg shadow-md overflow-hidden transition-all duration-300 transform hover:scale-101 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] border border-zinc-800"
             >
-              {/* Project Image or Placeholder */}
-              <div className="h-48 bg-black relative">
-                {project.image ? (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center text-zinc-600">
-                    Project Image
+              {/* Project Image or Video Thumbnail */}
+              <div
+                className="h-48 bg-black relative cursor-pointer"
+                onClick={() => project.hasVideo && setIsVideoModalOpen(true)}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+
+                {project.hasVideo && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hover:bg-opacity-50 transition-all">
+                    <div className="w-16 h-16 rounded-full bg-blue-500 bg-opacity-80 flex items-center justify-center transform transition-transform hover:scale-110">
+                      <svg
+                        className="w-8 h-8 text-white ml-1"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
                   </div>
                 )}
               </div>
@@ -171,13 +180,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-black text-white py-12 border-t border-zinc-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-6 md:mb-0">
-              <h2 className="text-2xl font-bold text-white">Ethan Rule</h2>
-              <p className="text-zinc-400 mt-1">Portfolio © {currentYear}</p>
-            </div>
-
-            <div className="flex space-x-6">
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="flex space-x-6 justify-center">
               <a
                 href="https://github.com/EthanRule"
                 target="_blank"
@@ -214,10 +218,34 @@ export default function Home() {
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
               </a>
+              <a
+                href="https://leetcode.com/u/Rudar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-blue-300 transition-colors"
+              >
+                <span className="sr-only">LeetCode</span>
+                <svg
+                  className="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
       </footer>
+
+      {/* Video Modal */}
+      {isVideoModalOpen && (
+        <VideoModal
+          videoId="I7wh98YY7cg"
+          onClose={() => setIsVideoModalOpen(false)}
+        />
+      )}
     </div>
   );
 }
