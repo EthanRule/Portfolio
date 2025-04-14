@@ -27,10 +27,10 @@ export default function VideoModal({ videoId, onClose }: VideoModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-80 transition-opacity duration-300">
-      <div className="bg-zinc-900 rounded-lg overflow-hidden shadow-2xl max-w-4xl w-full">
+      <div className="bg-zinc-900 rounded-lg overflow-hidden shadow-2xl w-full max-w-4xl">
         <div className="flex justify-between items-center p-4 border-b border-zinc-800">
           <h3 className="text-xl font-semibold text-white">
-            Lockout Addon Demo
+            Video Demonstration
           </h3>
           <button
             onClick={onClose}
@@ -63,12 +63,6 @@ export default function VideoModal({ videoId, onClose }: VideoModalProps) {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-        </div>
-        <div className="p-4 bg-zinc-900">
-          <p className="text-zinc-400">
-            See how the Lockout addon helps predict and track interrupts in
-            World of Warcraft PvP.
-          </p>
         </div>
       </div>
     </div>
