@@ -1,58 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
-import VideoModal from "@/components/VideoModal";
+import Project from "@/components/Project";
+import Link from "next/link";
+import AmbientBackground from "@/components/AmbientBackground";
 
 export default function Home() {
   // State for client-side rendering to avoid hydration mismatch
   const [currentYear, setCurrentYear] = useState("2023");
-  // State to control the video modal
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   // Update year after component mounts on client side
   useEffect(() => {
     setCurrentYear(new Date().getFullYear().toString());
   }, []);
-
-  // Sample project data - replace with your actual projects
-  const projects = [
-    {
-      id: 1,
-      title: "Rudarz.com",
-      description: "The #1 Balance Druid PvP Guide.",
-      tags: ["React", "Tailwind CSS", "TypeScript"],
-      image: "/Project-Images/Rudarz.com.png",
-    },
-    {
-      id: 2,
-      title: "AI Shot Detection App",
-      description: "AI basketball shot make/miss Android app.",
-      tags: ["Google MediaPipe", "Roboflow", "Kotlin"],
-      image: "/Project-Images/ai-shot-tracker.png",
-    },
-    // {
-    //   id: 3,
-    //   title: "AutoVideos",
-    //   description: "Semi-automatic Twitch clip to YouTube video generator.",
-    //   tags: ["FFmpeg", "Python", "Google APIs"],
-    //   image: "/Project-Images/AutoVideos.png",
-    // },
-    {
-      id: 4,
-      title: "WoW Stats",
-      description: "Player percentile and custom score calculator for WoW.",
-      tags: ["Typescript"],
-      image: "/Project-Images/wow-stats.png", // This image will show behind the play button
-    },
-    {
-      id: 5,
-      title: "Lockout",
-      description: "Fake casting addon for predicting interrupts in WoW.",
-      tags: ["Lua"],
-      image: "/Project-Images/Lockout.png", // This image will show behind the play button
-      hasVideo: true,
-      videoId: "I7wh98YY7cg",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -73,12 +32,12 @@ export default function Home() {
             Software Engineer & Web Developer
           </p>
 
-          <div className="flex justify-center space-x-4 pt-2">
+          <div className="flex justify-center flex-wrap gap-4 pt-2">
             <a
               href="https://github.com/EthanRule"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-zinc-800 hover:bg-zinc-700 text-white px-5 py-2 rounded-md transition-colors duration-300 flex items-center space-x-2"
+              className="bg-zinc-800 hover:bg-zinc-700 text-white px-5 py-2 rounded-md transition-colors duration-300 flex items-center space-x-2 m-1"
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -90,90 +49,90 @@ export default function Home() {
               <span>GitHub</span>
             </a>
             <a
-              href="https://www.linkedin.com/in/ethanrule/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-zinc-800 hover:bg-zinc-700 text-white px-5 py-2 rounded-md transition-colors duration-300 flex items-center space-x-2"
-            >
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z" />
-              </svg>
-              <span>LinkedIn</span>
-            </a>
-            <a
               href="https://leetcode.com/u/Rudar/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-zinc-800 hover:bg-zinc-700 text-white px-5 py-2 rounded-md transition-colors duration-300 flex items-center space-x-2"
+              className="bg-zinc-800 hover:bg-zinc-700 text-white px-5 py-2 rounded-md transition-colors duration-300 flex items-center space-x-2 m-1"
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
               </svg>
               <span>LeetCode</span>
             </a>
+            <a
+              href="https://www.linkedin.com/in/ethanrule/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-zinc-800 hover:bg-zinc-700 text-white px-5 py-2 rounded-md transition-colors duration-300 flex items-center space-x-2 m-1"
+            >
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z" />
+              </svg>
+              <span>LinkedIn</span>
+            </a>
           </div>
         </div>
       </header>
 
       {/* Projects Grid */}
-      <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <h1 className="pb-4 text-4xl font-bold">Projects</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-zinc-900 rounded-lg shadow-md overflow-hidden transition-all duration-300 transform hover:scale-101 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] border border-zinc-800"
-            >
-              {/* Project Image or Video Thumbnail */}
-              <div
-                className="h-48 bg-black relative cursor-pointer"
-                onClick={() => project.hasVideo && setIsVideoModalOpen(true)}
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
+      <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 relative">
+        {/* Replace the ambient background animation with the component */}
 
-                {project.hasVideo && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hover:bg-opacity-50 transition-all">
-                    <div className="w-16 h-16 rounded-full bg-blue-500 bg-opacity-80 flex items-center justify-center transform transition-transform hover:scale-110">
-                      <svg
-                        className="w-8 h-8 text-white ml-1"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  {project.title}
-                </h3>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="bg-black text-blue-300 text-xs px-2 py-1 rounded border border-zinc-800"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Description - Now Always Visible */}
-                <div className="mt-4 text-zinc-300 bg-black p-4 rounded-md border border-zinc-800">
-                  {project.description}
-                </div>
+        <div className="pb-10 relative z-10">
+          <div className="absolute -inset-4 bg-gradient-to-r from-blue-900/10 via-indigo-900/10 to-purple-900/10 rounded-lg blur-xl"></div>
+          <div className="relative z-10 flex flex-col items-center text-center">
+            <div className="flex flex-col items-center gap-4">
+              <div className="relative">
+                <h1 className="text-6xl pb-4 font-bold bg-gradient-to-br from-blue-400 via-purple-500 to-indigo-600 bg-clip-text text-transparent relative z-10 tracking-tight">
+                  Projects
+                </h1>
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600 to-indigo-600 opacity-30 filter blur-xl -z-10 scale-110"></div>
               </div>
             </div>
-          ))}
+            <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-blue-500 to-transparent mt-4 opacity-70"></div>
+            <div className="h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent mt-1 opacity-50"></div>
+          </div>
+          <div className="absolute -top-20 -left-20 w-96 h-64 bg-blue-500/5 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute -bottom-10 right-10 w-72 h-40 bg-indigo-500/5 rounded-full blur-3xl -z-10"></div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+          <Link href="https://www.rudarz.com/" target="_blank">
+            <Project
+              id={1}
+              title="Rudarz.com"
+              description="The #1 Balance Druid PvP Guide."
+              tags={["React", "Tailwind CSS", "TypeScript"]}
+              image="/Project-Images/Rudarz.com.png"
+            />
+          </Link>
+          <Project
+            id={2}
+            title="AI Shot Detection App"
+            description="AI basketball shot make/miss Android app."
+            tags={["Google MediaPipe", "Roboflow", "Kotlin"]}
+            image="/Project-Images/ai-shot-tracker.png"
+            hasVideo={true}
+            videoId="3hO7LNYTtTA"
+          />
+          <Link href="https://wow-stats.vercel.app/" target="_blank">
+            <Project
+              id={4}
+              title="WoW Stats"
+              description="Player percentile and custom score calculator for WoW."
+              tags={["Typescript"]}
+              image="/Project-Images/wow-stats.png"
+            />
+          </Link>
+          <Project
+            id={5}
+            title="Lockout"
+            description="Fake casting addon for predicting interrupts in WoW."
+            tags={["Lua"]}
+            image="/Project-Images/Lockout.png"
+            hasVideo={true}
+            videoId="I7wh98YY7cg"
+          />
         </div>
       </main>
 
@@ -238,14 +197,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-      {/* Video Modal */}
-      {isVideoModalOpen && (
-        <VideoModal
-          videoId="I7wh98YY7cg"
-          onClose={() => setIsVideoModalOpen(false)}
-        />
-      )}
     </div>
   );
 }
