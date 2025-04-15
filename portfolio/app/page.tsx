@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Project from "@/components/Project";
 import Link from "next/link";
-import AmbientBackground from "@/components/AmbientBackground";
+import Image from "next/image";
 
 export default function Home() {
   // State for client-side rendering to avoid hydration mismatch
@@ -16,18 +16,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Enhanced Header */}
-      <header className="bg-gradient-to-r from-zinc-900 via-black to-zinc-900 relative overflow-hidden">
+      <header className="bg-gradient-to-r via-black relative overflow-hidden">
         {/* Animated accent elements */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-blue-500 blur-[80px]"></div>
-          <div className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-indigo-500 blur-[80px]"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div className="max-w-7xl mx-auto pt-15 pb-10 px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-6xl font-bold text-white mb-4 tracking-tight">
             Ethan Rule
           </h1>
-
           <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
             Software Engineer & Web Developer
           </p>
@@ -74,67 +68,65 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Projects Grid */}
-      <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 relative">
-        {/* Replace the ambient background animation with the component */}
+      {/* Projects Section with Background Image */}
+      <section className="relative py-12 border-t-[0.5px] border-zinc-800">
+        {/* Background Image - Full Width */}
 
-        <div className="pb-10 relative z-10">
-          <div className="absolute -inset-4 bg-gradient-to-r from-blue-900/10 via-indigo-900/10 to-purple-900/10 rounded-lg blur-xl"></div>
-          <div className="relative z-10 flex flex-col items-center text-center">
-            <div className="flex flex-col items-center gap-4">
+        {/* Gradient Overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/60 z-0"></div>
+        {/* Projects Content */}
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="pb-10 relative">
+            <div className="relative z-10 flex flex-col justify-start">
               <div className="relative">
-                <h1 className="text-6xl pb-4 font-bold bg-gradient-to-br from-blue-400 via-purple-500 to-indigo-600 bg-clip-text text-transparent relative z-10 tracking-tight">
+                <h1 className="text-6xl font-bold pb-1 justify-start pl-20">
                   Projects
                 </h1>
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600 to-indigo-600 opacity-30 filter blur-xl -z-10 scale-110"></div>
+                <div className="h-px w-full lg:w-1/3 bg-gradient-to-r from-transparent via-indigo-500 to-transparent mt-1 opacity-50"></div>
               </div>
             </div>
-            <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-blue-500 to-transparent mt-4 opacity-70"></div>
-            <div className="h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent mt-1 opacity-50"></div>
           </div>
-          <div className="absolute -top-20 -left-20 w-96 h-64 bg-blue-500/5 rounded-full blur-3xl -z-10"></div>
-          <div className="absolute -bottom-10 right-10 w-72 h-40 bg-indigo-500/5 rounded-full blur-3xl -z-10"></div>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
-          <Link href="https://www.rudarz.com/" target="_blank">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+            <Link href="https://www.rudarz.com/" target="_blank">
+              <Project
+                id={1}
+                title="Rudarz.com"
+                description="The #1 Balance Druid PvP Guide."
+                tags={["TypeScript", "Tailwind CSS"]}
+                image="/Project-Images/Rudarz.com.png"
+              />
+            </Link>
             <Project
-              id={1}
-              title="Rudarz.com"
-              description="The #1 Balance Druid PvP Guide."
-              tags={["React", "Tailwind CSS", "TypeScript"]}
-              image="/Project-Images/Rudarz.com.png"
+              id={2}
+              title="AI Shot Detection App"
+              description="AI basketball shot make/miss Android app."
+              tags={["Google MediaPipe", "Roboflow", "Kotlin", "Python"]}
+              image="/Project-Images/ai-shot-tracker.png"
+              hasVideo={true}
+              videoId="3hO7LNYTtTA"
             />
-          </Link>
-          <Project
-            id={2}
-            title="AI Shot Detection App"
-            description="AI basketball shot make/miss Android app."
-            tags={["Google MediaPipe", "Roboflow", "Kotlin"]}
-            image="/Project-Images/ai-shot-tracker.png"
-            hasVideo={true}
-            videoId="3hO7LNYTtTA"
-          />
-          <Link href="https://wow-stats.vercel.app/" target="_blank">
+            <Link href="https://wow-stats.vercel.app/" target="_blank">
+              <Project
+                id={4}
+                title="WoW Stats"
+                description="Player percentile and custom score calculator for WoW."
+                tags={["TypeScript", "Tailwind CSS"]}
+                image="/Project-Images/wow-stats.png"
+              />
+            </Link>
             <Project
-              id={4}
-              title="WoW Stats"
-              description="Player percentile and custom score calculator for WoW."
-              tags={["Typescript"]}
-              image="/Project-Images/wow-stats.png"
+              id={5}
+              title="Lockout"
+              description="Fake casting addon for predicting interrupts in WoW."
+              tags={["Lua"]}
+              image="/Project-Images/Lockout.png"
+              hasVideo={true}
+              videoId="I7wh98YY7cg"
             />
-          </Link>
-          <Project
-            id={5}
-            title="Lockout"
-            description="Fake casting addon for predicting interrupts in WoW."
-            tags={["Lua"]}
-            image="/Project-Images/Lockout.png"
-            hasVideo={true}
-            videoId="I7wh98YY7cg"
-          />
-        </div>
-      </main>
+          </div>
+        </main>
+      </section>
 
       {/* Footer */}
       <footer className="bg-black text-white py-12 border-t border-zinc-900">
@@ -174,7 +166,7 @@ export default function Home() {
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                 >
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z" />
                 </svg>
               </a>
               <a
