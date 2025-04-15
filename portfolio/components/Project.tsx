@@ -23,7 +23,7 @@ export default function Project({
 
   return (
     <>
-      <div className="bg-zinc-900 rounded-lg shadow-md overflow-hidden transition-all duration-300 transform hover:scale-101 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] border border-zinc-800">
+      <div className="bg-zinc-900 rounded-lg shadow-md overflow-hidden transition-all duration-300 transform hover:scale-105 border border-zinc-800">
         {/* Project Image or Video Thumbnail */}
         <div
           className={`h-48 bg-black relative ${
