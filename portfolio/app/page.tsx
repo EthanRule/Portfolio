@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Project from "@/components/Project";
 import Link from "next/link";
 import Image from "next/image";
+import { Suspense } from "react";
+import ActivityStats from "@/components/ActivityStats";
 
 export default function Home() {
   // State for client-side rendering to avoid hydration mismatch
@@ -67,6 +69,19 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      {/* Activity Stats Section */}
+      <section className="py-8 px-4 sm:px-6 lg:px-8 border-t-[0.5px] border-zinc-800">
+        <div className="max-w-7xl mx-auto">
+          <Suspense
+            fallback={
+              <div className="h-60 bg-zinc-900 animate-pulse rounded-lg"></div>
+            }
+          >
+            <ActivityStats />
+          </Suspense>
+        </div>
+      </section>
 
       {/* Projects Section with Background Image */}
       <section className="relative py-12 border-t-[0.5px] border-zinc-800">
