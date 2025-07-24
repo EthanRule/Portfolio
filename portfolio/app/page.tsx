@@ -7,10 +7,8 @@ import { Suspense } from "react";
 import ActivityStats from "@/components/ActivityStats";
 
 export default function Home() {
-  // State for client-side rendering to avoid hydration mismatch
   const [currentYear, setCurrentYear] = useState("2023");
 
-  // Update year after component mounts on client side
   useEffect(() => {
     setCurrentYear(new Date().getFullYear().toString());
   }, []);
@@ -108,37 +106,10 @@ export default function Home() {
                 id={1}
                 title="Rudarz.com"
                 description="The #1 Balance Druid PvP Guide."
-                tags={["TypeScript", "Tailwind CSS"]}
+                tags={["Next.js", "Stripe", "TypeScript", "Tailwind CSS"]}
                 image="/Project-Images/Rudarz.com.png"
               />
             </Link>
-            <Project
-              id={2}
-              title="AI Shot Detection App"
-              description="AI basketball shot make/miss Android app."
-              tags={["Google MediaPipe", "Roboflow", "Kotlin", "Python"]}
-              image="/Project-Images/ai-shot-tracker.png"
-              hasVideo={true}
-              videoId="3hO7LNYTtTA"
-            />
-            <Link href="https://wow-stats.vercel.app/" target="_blank">
-              <Project
-                id={4}
-                title="WoW Stats"
-                description="Player percentile and custom score calculator for WoW."
-                tags={["TypeScript", "Tailwind CSS"]}
-                image="/Project-Images/wow-stats.png"
-              />
-            </Link>
-            <Project
-              id={5}
-              title="Lockout"
-              description="Fake casting addon for predicting interrupts in WoW."
-              tags={["Lua"]}
-              image="/Project-Images/Lockout.png"
-              hasVideo={true}
-              videoId="I7wh98YY7cg"
-            />
           </div>
         </main>
       </section>
