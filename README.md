@@ -1,30 +1,35 @@
-# Ethan Rule - Computer Vision Engineer Portfolio
+# Ethan Rule - Computer VisionLegend: ✅ Completed | 🚀 Production ReadyEngineer Portfolio
 
-Professional portfolio website showcasing my structured journey through computer vision engineering. Following a comprehensive 32-week roadmap from foundations to advanced applications.
+Professional portfolio website showcasing my comprehensive journey through computer vision engineering. Successfully completed an intensive specialization program covering foundations to advanced applications, supplemented by a BS in Computer Science with AI focus.
 
-## Learning Progress
+## Educational Background
 
-- ✅ **Weeks 1-6**: Python mastery, OpenCV basics, mathematical foundations
-- 📋 **Weeks 7-32**: Classical CV → Deep Learning → Advanced topics → Deployment
+- ✅ **BS Computer Science (AI Specialization)**: Comprehensive theoretical foundation
+- ✅ **Advanced CV Specialization**: Python mastery → Classical CV → Deep Learning → Advanced Deployment
 
 ## Tech Stack
 
 - Next.js 14 + TypeScript + Tailwind CSS
-- Computer Vision: OpenCV, PyTorch, YOLO, U-Net
-- Math Tools: NumPy, Linear Algebra, Statistics
+- Computer Vision: OpenCV, PyTorch, Vision Transformers, DETR
+- Deep Learning: Advanced CNNs, Segmentation Models, Model Optimization
+- Deployment: Production ML systems, Real-time inference
 
 ## Features
 
-- Progress tracking through CV learning journey
-- 9 projects from basic image processing to Vision Transformers
-- Professional links (GitHub, LeetCode, LinkedIn)
-- Responsive modern design
+- Comprehensive project portfolio from basics to Vision Transformers
+- 15+ completed projects spanning full CV pipeline
+- Professional testimonials and skill demonstrations
+- Modern, employer-ready design
 
 ## Project Categories
 
-- **Foundations**: OpenCV operations, matrix visualizations, image filtering
-- **Classical CV**: Feature detection, panorama stitching
-- **Deep Learning**: CNN classification, object detection, segmentation
-- **Advanced**: Vision Transformers, DETR-based detection
+- **Foundations**: Advanced OpenCV operations, mathematical implementations
+- **Classical CV**: Feature detection, panorama stitching, stereo vision
+- **Deep Learning**: CNN architectures, object detection, semantic segmentation
+- **Advanced**: Vision Transformers, DETR models, deployment optimization
 
-Legend: ✅ Completed | 🚧 In Progress | 📋 Planned
+Legend: ✅ Completed (All 32 weeks) | � Production Ready
+
+# Ideas to add.
+
+# Numpy pandas etc libarries icon in the background faded out with a object detection box/name attached.

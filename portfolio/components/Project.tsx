@@ -43,43 +43,47 @@ export default function Project({
 
   return (
     <>
-      <div className="bg-zinc-900 rounded-lg shadow-md overflow-hidden transition-all duration-300 transform hover:scale-105 border border-zinc-800 h-96 flex flex-col">
+      <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-slate-200 h-96 flex flex-col">
         {/* Project Image or Video Thumbnail */}
         <div
-          className={`h-32 bg-black relative flex-shrink-0 ${
+          className={`h-32 bg-slate-100 relative flex-shrink-0 ${
             hasVideo ? "cursor-pointer" : ""
-          } ${realtime || fps ? "border-green-500 border" : ""} ${
-            demo ? "border-blue-500 border" : ""
-          } ${interactive ? "border-purple-500 border" : ""}`}
+          } ${realtime || fps ? "border-emerald-400 border-2" : ""} ${
+            demo ? "border-blue-400 border-2" : ""
+          } ${interactive ? "border-purple-400 border-2" : ""}`}
           onClick={() => hasVideo && setIsVideoModalOpen(true)}
         >
-          <img src={image} alt={title} className="w-full h-full object-cover" />
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover rounded-t-xl"
+          />
 
           {/* Visual indicators for different project types */}
           {realtime && (
-            <div className="absolute top-2 right-2 bg-green-500 text-black px-2 py-1 rounded text-xs font-bold">
+            <div className="absolute top-2 right-2 bg-emerald-500 text-white px-2 py-1 rounded-md text-xs font-semibold">
               LIVE
             </div>
           )}
           {demo && (
-            <div className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded text-xs font-bold">
+            <div className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-md text-xs font-semibold">
               DEMO
             </div>
           )}
           {fps && (
-            <div className="absolute top-2 left-2 bg-green-600 text-white px-2 py-1 rounded text-xs font-mono">
+            <div className="absolute top-2 left-2 bg-emerald-600 text-white px-2 py-1 rounded-md text-xs font-mono font-semibold">
               45 FPS
             </div>
           )}
           {metrics && (
-            <div className="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded text-xs font-mono">
+            <div className="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded-md text-xs font-mono font-semibold">
               94.2%
             </div>
           )}
 
           {hasVideo && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hover:bg-opacity-50 transition-all">
-              <div className="w-16 h-16 rounded-full bg-blue-500 bg-opacity-80 flex items-center justify-center transform transition-transform hover:scale-110">
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hover:bg-opacity-50 transition-all rounded-t-xl">
+              <div className="w-16 h-16 rounded-full bg-blue-500 bg-opacity-90 flex items-center justify-center transform transition-transform hover:scale-110">
                 <svg
                   className="w-8 h-8 text-white ml-1"
                   fill="currentColor"
@@ -93,22 +97,22 @@ export default function Project({
         </div>
 
         {/* Project Content */}
-        <div className="p-4 flex-1 flex flex-col">
-          <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2">
+        <div className="p-6 flex-1 flex flex-col">
+          <h3 className="text-lg font-medium text-slate-900 mb-3 line-clamp-2">
             {title}
           </h3>
 
-          <div className="flex flex-wrap gap-1 mb-3">
+          <div className="flex flex-wrap gap-2 mb-4">
             {tags.slice(0, 3).map((tag, index) => (
               <span
                 key={index}
-                className="bg-black text-blue-300 text-xs px-2 py-1 rounded border border-zinc-800"
+                className="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full border border-slate-200 font-medium"
               >
                 {tag}
               </span>
             ))}
             {tags.length > 3 && (
-              <span className="bg-black text-gray-400 text-xs px-2 py-1 rounded border border-zinc-800">
+              <span className="bg-slate-100 text-slate-500 text-xs px-3 py-1 rounded-full border border-slate-200">
                 +{tags.length - 3}
               </span>
             )}
@@ -116,23 +120,23 @@ export default function Project({
 
           {/* Description - Code/Output Style */}
           <div
-            className={`flex-1 bg-black p-3 rounded-md border border-zinc-800 text-sm overflow-hidden ${
+            className={`flex-1 bg-slate-50 p-4 rounded-lg border border-slate-200 text-sm overflow-hidden ${
               demo || interactive ? "font-mono" : ""
             }`}
           >
-            <div className="line-clamp-3 text-zinc-300 whitespace-pre-line">
+            <div className="line-clamp-3 text-slate-600 whitespace-pre-line leading-relaxed">
               {description}
             </div>
           </div>
 
           {/* GitHub Repository Button */}
           {githubUrl && (
-            <div className="mt-3">
+            <div className="mt-4">
               <a
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 text-white px-3 py-2 rounded-md transition-all duration-300 transform hover:scale-105 text-sm w-full justify-center"
+                className="inline-flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-3 rounded-lg transition-all duration-300 hover:scale-105 text-sm w-full justify-center font-medium"
                 onClick={(e) => e.stopPropagation()} // Prevent parent click events
               >
                 <svg
@@ -146,7 +150,7 @@ export default function Project({
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="font-medium">View Repository</span>
+                <span>View Repository</span>
               </a>
             </div>
           )}
