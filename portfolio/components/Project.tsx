@@ -19,6 +19,7 @@ interface ProjectProps {
   fps?: boolean;
   medical?: boolean;
   attention?: boolean;
+  isPrivate?: boolean;
 }
 
 export default function Project({
@@ -38,12 +39,13 @@ export default function Project({
   fps = false,
   medical = false,
   attention = false,
+  isPrivate = false,
 }: ProjectProps) {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
     <>
-      <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-slate-200 h-96 flex flex-col">
+      <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-slate-200 h-[420px] flex flex-col">
         {/* Project Image or Video Thumbnail */}
         <div
           className={`h-32 bg-slate-100 relative flex-shrink-0 ${
@@ -65,9 +67,21 @@ export default function Project({
               LIVE
             </div>
           )}
-          {demo && (
+          {demo && !isPrivate && (
             <div className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-md text-xs font-semibold">
               DEMO
+            </div>
+          )}
+          {isPrivate && (
+            <div className="absolute top-2 right-2 bg-amber-500 text-white px-2 py-1 rounded-md text-xs font-semibold flex items-center space-x-1">
+              <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fillRule="evenodd"
+                  d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span>PRIVATE</span>
             </div>
           )}
           {fps && (
@@ -136,11 +150,15 @@ export default function Project({
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-3 rounded-lg transition-all duration-300 hover:scale-105 text-sm w-full justify-center font-medium"
+                className={`inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-lg transition-all duration-300 hover:scale-105 text-sm w-full font-medium ${
+                  isPrivate
+                    ? "bg-amber-600 hover:bg-amber-700 text-white"
+                    : "bg-slate-800 hover:bg-slate-700 text-white"
+                }`}
                 onClick={(e) => e.stopPropagation()} // Prevent parent click events
               >
                 <svg
-                  className="h-4 w-4"
+                  className="h-4 w-4 flex-shrink-0"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -150,7 +168,22 @@ export default function Project({
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>View Repository</span>
+                {isPrivate && (
+                  <svg
+                    className="h-3 w-3 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                )}
+                <span className="flex-1 text-center">
+                  {isPrivate ? "Private Repository" : "View Repository"}
+                </span>
               </a>
             </div>
           )}
