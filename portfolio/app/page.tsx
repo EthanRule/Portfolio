@@ -13,35 +13,47 @@ export default function Home() {
   const projects = [
     {
       id: 1,
-      title: "mtraineer.com ✅",
+      title: "Rudarz.com ✅",
       description:
-        "Full-stack web application for personal training business with client management, workout planning, progress tracking, and payment integration. Built with modern web technologies and deployed on cloud infrastructure.",
-      tags: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
-      image: "/Project-Images/mtraineer.png",
-      githubUrl: "https://github.com/EthanRule/mtraineer",
-      demo: true,
-      liveUrl: "https://mtraineer.com",
+        "Built a course website based on my personal competetion experience, which has helped over 250 players and has generated over $2500 in personal revenue.",
+      tags: [
+        "Typescript",
+        "React",
+        "TailwindCSS",
+        "Node.js",
+        "PostgreSQL",
+        "Stripe",
+        "Next-Auth",
+        "Vercel",
+      ],
+      image: "/Project-Images/Rudarz.com.png",
+      isPrivate: true,
     },
     {
       id: 2,
-      title: "World of Warcraft Statistics Dashboard ✅",
+      title: "AI Shot Detection ✅",
       description:
-        "Real-time statistics dashboard for World of Warcraft players with character lookup, guild analysis, and performance metrics using Blizzard's official API. Features responsive design and interactive data visualizations.",
-      tags: ["React", "TypeScript", "Blizzard API", "Chart.js", "CSS"],
-      image: "/Project-Images/wow-stats.png",
-      githubUrl: "https://github.com/EthanRule/wow-stats",
-      demo: true,
+        "Developed a machine-learning Android app to help basketball players improve their skills. Placed 3rd out of 20 for the Winter 2024 Computer Science Capstone project competetion",
+      tags: [
+        "Kotlin",
+        "Roboflow",
+        "Google MediaPipe",
+        "Tensorflow",
+        "FFmpeg",
+        "Android Studio",
+      ],
+      image: "/Project-Images/ai-shot-tracker.png",
+      isPrivate: true,
     },
     {
       id: 3,
-      title: "Rudarz.com Portfolio �",
+      title: "Rust Database Engine",
       description:
-        "Personal portfolio website featuring responsive design, project showcases, and contact integration with modern web technologies.",
-      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
-      image: "/Project-Images/Rudarz.com.png",
-      githubUrl: "https://github.com/EthanRule/rudarz-portfolio",
-      demo: true,
-      liveUrl: "https://rudarz.com",
+        "Engineered a partial custom document based database engine in Rust using BTree-backed storage system and BSON serialization. Also built two Rust web servers pinned on my GitHub.",
+      tags: ["Rust", "Cargo"],
+      image: "/Project-Images/rust.png",
+      githubUrl: "https://github.com/EthanRule/rust_database_engine",
+      isPrivate: false,
     },
     {
       id: 4,
@@ -51,7 +63,7 @@ export default function Home() {
       tags: ["Python", "OpenCV", "Machine Learning", "Computer Vision"],
       image: "/Project-Images/ai-shot-tracker.png",
       githubUrl: "https://github.com/EthanRule/ai-shot-tracker",
-      demo: true,
+      isPrivate: false,
     },
   ];
 
@@ -279,7 +291,7 @@ export default function Home() {
                       tags={project.tags}
                       image={project.image}
                       githubUrl={project.githubUrl}
-                      demo={project.demo}
+                      isPrivate={project.isPrivate}
                     />
                   </div>
                 </div>
@@ -297,7 +309,7 @@ export default function Home() {
                     tags={projects[0].tags}
                     image={projects[0].image}
                     githubUrl={projects[0].githubUrl}
-                    demo={projects[0].demo}
+                    isPrivate={projects[0].isPrivate}
                   />
                 </div>
               </div>
