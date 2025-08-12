@@ -13,93 +13,45 @@ export default function Home() {
   const projects = [
     {
       id: 1,
-      title: "OpenCV Basics ✅",
+      title: "mtraineer.com ✅",
       description:
-        "img = cv2.imread('input.jpg')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\nresized = cv2.resize(gray, (400, 300))",
-      tags: ["OpenCV", "Python", "cv2.imread", "cv2.resize"],
-      image: "/Project-Images/opencv-demo.gif",
-      githubUrl: "https://github.com/EthanRule/opencv-image-operations",
+        "Full-stack web application for personal training business with client management, workout planning, progress tracking, and payment integration. Built with modern web technologies and deployed on cloud infrastructure.",
+      tags: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
+      image: "/Project-Images/mtraineer.png",
+      githubUrl: "https://github.com/EthanRule/mtraineer",
       demo: true,
+      liveUrl: "https://mtraineer.com",
     },
     {
       id: 2,
-      title: "Matrix Transforms 🚧",
+      title: "World of Warcraft Statistics Dashboard ✅",
       description:
-        "# Rotation Matrix\nθ = 45°\n[[cos(θ) -sin(θ)]\n [sin(θ)  cos(θ)]]\n\nEigenvalues: λ₁=2.4, λ₂=0.6",
-      tags: ["NumPy", "Matplotlib", "Linear Algebra"],
-      image: "/Project-Images/matrix-visualization.png",
-      githubUrl: "https://github.com/EthanRule/matrix-transformer",
-      interactive: true,
+        "Real-time statistics dashboard for World of Warcraft players with character lookup, guild analysis, and performance metrics using Blizzard's official API. Features responsive design and interactive data visualizations.",
+      tags: ["React", "TypeScript", "Blizzard API", "Chart.js", "CSS"],
+      image: "/Project-Images/wow-stats.png",
+      githubUrl: "https://github.com/EthanRule/wow-stats",
+      demo: true,
     },
     {
       id: 3,
-      title: "Edge Detection 📋",
+      title: "Rudarz.com Portfolio �",
       description:
-        "Before → After\n[Image filters applied live]\nCanny: σ=1.0, low=50, high=150\nSobel: ksize=3, scale=1",
-      tags: ["Canny", "Sobel", "Filters"],
-      image: "/Project-Images/edge-detection-comparison.jpg",
-      githubUrl: "https://github.com/EthanRule/image-filter-toolkit",
-      beforeAfter: true,
+        "Personal portfolio website featuring responsive design, project showcases, and contact integration with modern web technologies.",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+      image: "/Project-Images/Rudarz.com.png",
+      githubUrl: "https://github.com/EthanRule/rudarz-portfolio",
+      demo: true,
+      liveUrl: "https://rudarz.com",
     },
     {
       id: 4,
-      title: "Feature Detection 📋",
+      title: "AI Basketball Shot Tracker 📋",
       description:
-        "✓ QR Code detected: (x:120, y:85)\n✓ Logo matched: 94% confidence\n✓ Keypoints: 247 SIFT, 158 ORB",
-      tags: ["SIFT", "ORB", "Pattern Recognition"],
-      image: "/Project-Images/feature-detection-demo.gif",
-      githubUrl: "https://github.com/EthanRule/qr-logo-detector",
-      realtime: true,
-    },
-    {
-      id: 5,
-      title: "Panorama Stitching 📋",
-      description:
-        "3 images → 1 seamless panorama\nHomography matrix computed\n2847 matched features\nBlending: Multi-band",
-      tags: ["Homography", "RANSAC", "Stitching"],
-      image: "/Project-Images/panorama-stitch-process.jpg",
-      githubUrl: "https://github.com/EthanRule/panorama-stitcher",
-      process: true,
-    },
-    {
-      id: 6,
-      title: "CIFAR-10 CNN 📋",
-      description:
-        "Epoch 25/30: 94.2% accuracy\nResNet-18 → 11M parameters\nBatch size: 128, LR: 0.001\nVal loss: 0.245 ↓",
-      tags: ["PyTorch", "CNN", "ResNet-18"],
-      image: "/Project-Images/training-curves.png",
-      githubUrl: "https://github.com/EthanRule/cifar10-cnn",
-      metrics: true,
-    },
-    {
-      id: 7,
-      title: "YOLOv5 Detection 📋",
-      description:
-        "🎯 person: 0.87\n🚗 car: 0.92\n🚲 bicycle: 0.78\n⚡ 45.3 FPS | 22ms inference",
-      tags: ["YOLOv5", "Real-time", "45 FPS"],
-      image: "/Project-Images/yolo-detection-live.gif",
-      githubUrl: "https://github.com/EthanRule/realtime-object-detection",
-      fps: true,
-    },
-    {
-      id: 8,
-      title: "Medical Segmentation 📋",
-      description:
-        "U-Net output:\n🔴 Tumor regions: 23 pixels\n🟢 Healthy tissue: 8,932 pixels\nDice score: 0.94",
-      tags: ["U-Net", "Medical AI", "Dice: 0.94"],
-      image: "/Project-Images/medical-segmentation-overlay.png",
-      githubUrl: "https://github.com/EthanRule/medical-segmentation",
-      medical: true,
-    },
-    {
-      id: 9,
-      title: "Vision Transformers 📋",
-      description:
-        "Multi-head attention (8 heads)\nPatch size: 16×16\nObjects detected: 12\nAttention maps visualized ↓",
-      tags: ["ViT", "DETR", "Attention Maps"],
-      image: "/Project-Images/attention-visualization.png",
-      githubUrl: "https://github.com/EthanRule/vision-transformer-detection",
-      attention: true,
+        "Computer vision application that tracks basketball shots using machine learning algorithms. Analyzes shooting form, accuracy, and provides performance insights for player improvement.",
+      tags: ["Python", "OpenCV", "Machine Learning", "Computer Vision"],
+      image: "/Project-Images/ai-shot-tracker.png",
+      githubUrl: "https://github.com/EthanRule/ai-shot-tracker",
+      demo: true,
     },
   ];
 
@@ -149,8 +101,7 @@ export default function Home() {
             Ethan Rule
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-8 font-light">
-            Computer Vision Engineer • BS Computer Science (AI) • Vision
-            Transformer Specialist
+            Software Engineer
           </p>
 
           {/* CTA Buttons */}
@@ -178,32 +129,30 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-slate-600 leading-relaxed mb-6">
-                Computer Vision Engineer with a BS in Computer Science
-                specializing in Artificial Intelligence. I've successfully
-                completed an intensive advanced specialization program,
-                mastering everything from classical computer vision to
-                cutting-edge Vision Transformers and DETR models.
+                Software Engineer with a passion for building innovative
+                applications and solving complex problems. I have experience
+                working with modern web technologies, mobile development, and
+                creating user-focused solutions that make a real impact.
               </p>
               <p className="text-slate-600 leading-relaxed mb-6">
-                My expertise spans the entire computer vision pipeline - from
-                foundational image processing and feature detection to modern
-                deep learning architectures. I excel at translating complex
-                research into production-ready solutions that solve real-world
-                problems.
+                My expertise spans full-stack development, from frontend user
+                interfaces to backend systems and databases. I enjoy learning
+                new technologies and applying them to create efficient,
+                scalable, and maintainable software solutions.
               </p>
 
               {/* Key Stats */}
               <div className="grid grid-cols-3 gap-4 mt-8">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-slate-900">15+</div>
+                  <div className="text-2xl font-bold text-slate-900">10+</div>
                   <div className="text-sm text-slate-600">Projects</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-slate-900">BS</div>
-                  <div className="text-sm text-slate-600">CS/AI Degree</div>
+                  <div className="text-2xl font-bold text-slate-900">3+</div>
+                  <div className="text-sm text-slate-600">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-slate-900">25+</div>
+                  <div className="text-2xl font-bold text-slate-900">15+</div>
                   <div className="text-sm text-slate-600">Technologies</div>
                 </div>
               </div>
@@ -216,25 +165,19 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-emerald-500 rounded-full mr-3"></div>
-                  <span className="text-slate-700">
-                    Vision Transformers & DETR
-                  </span>
+                  <span className="text-slate-700">Full-Stack Development</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
-                  <span className="text-slate-700">
-                    Deep Learning Deployment
-                  </span>
+                  <span className="text-slate-700">Web Applications</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                  <span className="text-slate-700">
-                    Classical CV & Modern ML
-                  </span>
+                  <span className="text-slate-700">Database Design</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
-                  <span className="text-slate-700">Production Systems</span>
+                  <span className="text-slate-700">API Development</span>
                 </div>
               </div>
             </div>
@@ -247,51 +190,51 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-light text-slate-900 mb-6">
-              Technical Expertise
+              Technical Skills
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-blue-300 transition-all duration-300">
-                <div className="text-blue-600 text-2xl mb-3">🔍</div>
+                <div className="text-blue-600 text-2xl mb-3">⚛️</div>
                 <h3 className="text-sm font-mono text-slate-700 mb-3 font-semibold">
-                  import cv2
+                  Frontend
                 </h3>
                 <p className="text-xs text-slate-500 font-mono leading-relaxed">
-                  OpenCV • SIFT • ORB
+                  React • JavaScript
                   <br />
-                  Canny • Sobel
+                  HTML • CSS
                 </p>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-green-400 transition-all duration-300">
-                <div className="text-green-600 text-2xl mb-3">🧠</div>
+                <div className="text-green-600 text-2xl mb-3">🖥️</div>
                 <h3 className="text-sm font-mono text-slate-700 mb-3 font-semibold">
-                  import torch
+                  Backend
                 </h3>
                 <p className="text-xs text-slate-500 font-mono leading-relaxed">
-                  PyTorch • CNN
+                  Node.js • Python
                   <br />
-                  ResNet • U-Net
+                  APIs • Databases
                 </p>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-purple-400 transition-all duration-300">
-                <div className="text-purple-600 text-2xl mb-3">🎯</div>
+                <div className="text-purple-600 text-2xl mb-3">📱</div>
                 <h3 className="text-sm font-mono text-slate-700 mb-3 font-semibold">
-                  YOLOv5()
+                  Mobile
                 </h3>
                 <p className="text-xs text-slate-500 font-mono leading-relaxed">
-                  Real-time • 45fps
+                  React Native
                   <br />
-                  DETR • R-CNN
+                  iOS • Android
                 </p>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-orange-400 transition-all duration-300">
-                <div className="text-orange-600 text-2xl mb-3">📊</div>
+                <div className="text-orange-600 text-2xl mb-3">�️</div>
                 <h3 className="text-sm font-mono text-slate-700 mb-3 font-semibold">
-                  import numpy
+                  Tools
                 </h3>
                 <p className="text-xs text-slate-500 font-mono leading-relaxed">
-                  Linear Algebra
+                  Git • Docker
                   <br />
-                  Matrix Ops
+                  VS Code • AWS
                 </p>
               </div>
             </div>
@@ -337,14 +280,6 @@ export default function Home() {
                       image={project.image}
                       githubUrl={project.githubUrl}
                       demo={project.demo}
-                      interactive={project.interactive}
-                      beforeAfter={project.beforeAfter}
-                      realtime={project.realtime}
-                      process={project.process}
-                      metrics={project.metrics}
-                      fps={project.fps}
-                      medical={project.medical}
-                      attention={project.attention}
                     />
                   </div>
                 </div>
@@ -363,14 +298,6 @@ export default function Home() {
                     image={projects[0].image}
                     githubUrl={projects[0].githubUrl}
                     demo={projects[0].demo}
-                    interactive={projects[0].interactive}
-                    beforeAfter={projects[0].beforeAfter}
-                    realtime={projects[0].realtime}
-                    process={projects[0].process}
-                    metrics={projects[0].metrics}
-                    fps={projects[0].fps}
-                    medical={projects[0].medical}
-                    attention={projects[0].attention}
                   />
                 </div>
               </div>
@@ -461,59 +388,59 @@ export default function Home() {
             </h2>
             <div className="h-0.5 w-24 bg-slate-300 mx-auto mb-8"></div>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              A comprehensive toolkit focused on computer vision, web
-              development, and modern programming languages.
+              A comprehensive toolkit focused on full-stack development, modern
+              web technologies, and software engineering best practices.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Computer Vision */}
+            {/* Frontend */}
             <div className="text-center">
               <div className="bg-slate-50 p-6 rounded-xl mb-4">
-                <div className="text-2xl mb-3">🔍</div>
+                <div className="text-2xl mb-3">⚛️</div>
                 <h3 className="font-medium text-slate-900 mb-3">
-                  Computer Vision
+                  Frontend Development
                 </h3>
                 <div className="space-y-2 text-sm text-slate-600">
-                  <div>Vision Transformers</div>
-                  <div>DETR Models</div>
-                  <div>Segmentation</div>
-                  <div>OpenCV Advanced</div>
-                  <div>Real-time Systems</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Programming Languages */}
-            <div className="text-center">
-              <div className="bg-slate-50 p-6 rounded-xl mb-4">
-                <div className="text-2xl mb-3">💻</div>
-                <h3 className="font-medium text-slate-900 mb-3">
-                  Deep Learning
-                </h3>
-                <div className="space-y-2 text-sm text-slate-600">
-                  <div>PyTorch</div>
-                  <div>TensorFlow</div>
-                  <div>Python (Advanced)</div>
-                  <div>CUDA Programming</div>
-                  <div>Model Optimization</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Web Technologies */}
-            <div className="text-center">
-              <div className="bg-slate-50 p-6 rounded-xl mb-4">
-                <div className="text-2xl mb-3">🌐</div>
-                <h3 className="font-medium text-slate-900 mb-3">
-                  Web Development
-                </h3>
-                <div className="space-y-2 text-sm text-slate-600">
-                  <div>React</div>
-                  <div>Next.js</div>
-                  <div>Node.js</div>
+                  <div>React & Next.js</div>
+                  <div>TypeScript</div>
                   <div>Tailwind CSS</div>
+                  <div>JavaScript ES6+</div>
+                  <div>Responsive Design</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Backend */}
+            <div className="text-center">
+              <div className="bg-slate-50 p-6 rounded-xl mb-4">
+                <div className="text-2xl mb-3">�️</div>
+                <h3 className="font-medium text-slate-900 mb-3">
+                  Backend Development
+                </h3>
+                <div className="space-y-2 text-sm text-slate-600">
+                  <div>Node.js & Express</div>
+                  <div>Python & Flask</div>
                   <div>RESTful APIs</div>
+                  <div>Database Design</div>
+                  <div>Authentication</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Database & Cloud */}
+            <div className="text-center">
+              <div className="bg-slate-50 p-6 rounded-xl mb-4">
+                <div className="text-2xl mb-3">☁️</div>
+                <h3 className="font-medium text-slate-900 mb-3">
+                  Database & Cloud
+                </h3>
+                <div className="space-y-2 text-sm text-slate-600">
+                  <div>MongoDB & PostgreSQL</div>
+                  <div>Firebase</div>
+                  <div>AWS Services</div>
+                  <div>Docker</div>
+                  <div>Vercel & Netlify</div>
                 </div>
               </div>
             </div>
@@ -523,14 +450,14 @@ export default function Home() {
               <div className="bg-slate-50 p-6 rounded-xl mb-4">
                 <div className="text-2xl mb-3">🛠️</div>
                 <h3 className="font-medium text-slate-900 mb-3">
-                  Tools & Platforms
+                  Tools & DevOps
                 </h3>
                 <div className="space-y-2 text-sm text-slate-600">
-                  <div>Git/GitHub</div>
+                  <div>Git & GitHub</div>
                   <div>VS Code</div>
-                  <div>Docker</div>
-                  <div>Firebase</div>
-                  <div>Vercel</div>
+                  <div>Webpack & Vite</div>
+                  <div>Testing Frameworks</div>
+                  <div>CI/CD Pipelines</div>
                 </div>
               </div>
             </div>
@@ -546,35 +473,7 @@ export default function Home() {
                 <div>
                   <div className="flex justify-between mb-2">
                     <span className="text-sm font-medium text-slate-700">
-                      Vision Transformers & DETR
-                    </span>
-                    <span className="text-sm text-slate-500">92%</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div
-                      className="bg-slate-600 h-2 rounded-full"
-                      style={{ width: "92%" }}
-                    ></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-slate-700">
-                      Python & Deep Learning
-                    </span>
-                    <span className="text-sm text-slate-500">95%</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div
-                      className="bg-slate-600 h-2 rounded-full"
-                      style={{ width: "95%" }}
-                    ></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-slate-700">
-                      PyTorch & TensorFlow
+                      React & Next.js
                     </span>
                     <span className="text-sm text-slate-500">90%</span>
                   </div>
@@ -585,26 +484,10 @@ export default function Home() {
                     ></div>
                   </div>
                 </div>
-              </div>
-              <div className="space-y-6">
                 <div>
                   <div className="flex justify-between mb-2">
                     <span className="text-sm font-medium text-slate-700">
-                      Classical Computer Vision
-                    </span>
-                    <span className="text-sm text-slate-500">94%</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div
-                      className="bg-slate-600 h-2 rounded-full"
-                      style={{ width: "94%" }}
-                    ></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-slate-700">
-                      ML Model Deployment
+                      JavaScript/TypeScript
                     </span>
                     <span className="text-sm text-slate-500">88%</span>
                   </div>
@@ -618,7 +501,7 @@ export default function Home() {
                 <div>
                   <div className="flex justify-between mb-2">
                     <span className="text-sm font-medium text-slate-700">
-                      Full-Stack Development
+                      Node.js & Python
                     </span>
                     <span className="text-sm text-slate-500">85%</span>
                   </div>
@@ -630,251 +513,49 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-light text-slate-900 mb-6">
-              What People Say
-            </h2>
-            <div className="h-0.5 w-24 bg-slate-300 mx-auto mb-8"></div>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              Feedback from colleagues and collaborators on recent projects and
-              contributions.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="text-yellow-400 text-sm">★★★★★</div>
-              </div>
-              <p className="text-slate-600 mb-6 italic">
-                "Exceptional expertise in Vision Transformers and DETR models.
-                The deployment optimizations achieved 40% faster inference with
-                maintained accuracy - exactly what we needed for production."
-              </p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-slate-600 font-medium">JD</span>
-                </div>
+              <div className="space-y-6">
                 <div>
-                  <div className="font-medium text-slate-900">John Doe</div>
-                  <div className="text-sm text-slate-500">Lead Developer</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="text-yellow-400 text-sm">★★★★★</div>
-              </div>
-              <p className="text-slate-600 mb-6 italic">
-                "Delivered a complete segmentation pipeline with custom loss
-                functions and data augmentation. The model achieved
-                state-of-the-art results on our dataset."
-              </p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-slate-600 font-medium">SM</span>
-                </div>
-                <div>
-                  <div className="font-medium text-slate-900">Sarah Miller</div>
-                  <div className="text-sm text-slate-500">Project Manager</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="text-yellow-400 text-sm">★★★★★</div>
-              </div>
-              <p className="text-slate-600 mb-6 italic">
-                "Advanced knowledge in deep learning architectures and
-                deployment strategies. Successfully implemented and optimized
-                multiple Vision Transformer models for our research lab."
-              </p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-slate-600 font-medium">AR</span>
-                </div>
-                <div>
-                  <div className="font-medium text-slate-900">Alex Rivera</div>
-                  <div className="text-sm text-slate-500">Senior Engineer</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-12">
-            <div className="bg-white p-8 rounded-xl shadow-sm max-w-2xl mx-auto">
-              <h3 className="text-xl font-medium text-slate-900 mb-4">
-                Ready to Work Together?
-              </h3>
-              <p className="text-slate-600 mb-6">
-                Let's discuss how I can contribute to your next project or team.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-slate-800 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300">
-                  View Resume
-                </button>
-                <button className="border border-slate-300 hover:border-slate-400 text-slate-700 px-6 py-3 rounded-lg font-medium transition-all duration-300">
-                  Start Conversation
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-100">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-light text-slate-900 mb-6">
-              Let's Work Together
-            </h2>
-            <div className="h-0.5 w-24 bg-slate-300 mx-auto mb-8"></div>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              Interested in computer vision projects or discussing
-              opportunities? I'm always open to connecting with fellow engineers
-              and potential collaborators.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <h3 className="text-lg font-medium text-slate-900 mb-6">
-                Send a Message
-              </h3>
-              <form className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Tell me about your project or opportunity..."
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-slate-800 hover:bg-slate-700 text-white py-3 rounded-lg font-medium transition-all duration-300"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-
-            {/* Contact Info */}
-            <div className="space-y-8">
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-lg font-medium text-slate-900 mb-4">
-                  Quick Connect
-                </h3>
-                <div className="space-y-4">
-                  <a
-                    href="mailto:your.email@example.com"
-                    className="flex items-center text-slate-600 hover:text-slate-900 transition-colors"
-                  >
-                    <svg
-                      className="w-5 h-5 mr-3 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                    your.email@example.com
-                  </a>
-                  <div className="flex items-center text-slate-600">
-                    <svg
-                      className="w-5 h-5 mr-3 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    Available for Remote Work
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm font-medium text-slate-700">
+                      Database Design
+                    </span>
+                    <span className="text-sm text-slate-500">82%</span>
                   </div>
-                  <div className="flex items-center text-slate-600">
-                    <svg
-                      className="w-5 h-5 mr-3 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    Response within 24 hours
+                  <div className="w-full bg-slate-200 rounded-full h-2">
+                    <div
+                      className="bg-slate-600 h-2 rounded-full"
+                      style={{ width: "82%" }}
+                    ></div>
                   </div>
                 </div>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-lg font-medium text-slate-900 mb-4">
-                  Specializations
-                </h3>
-                <ul className="space-y-2 text-slate-600">
-                  <li>• Vision Transformers & DETR</li>
-                  <li>• Advanced Segmentation Models</li>
-                  <li>• Production ML Deployment</li>
-                  <li>• Deep Learning Architecture</li>
-                  <li>• End-to-End CV Solutions</li>
-                </ul>
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm font-medium text-slate-700">
+                      Cloud & DevOps
+                    </span>
+                    <span className="text-sm text-slate-500">78%</span>
+                  </div>
+                  <div className="w-full bg-slate-200 rounded-full h-2">
+                    <div
+                      className="bg-slate-600 h-2 rounded-full"
+                      style={{ width: "78%" }}
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm font-medium text-slate-700">
+                      Mobile Development
+                    </span>
+                    <span className="text-sm text-slate-500">75%</span>
+                  </div>
+                  <div className="w-full bg-slate-200 rounded-full h-2">
+                    <div
+                      className="bg-slate-600 h-2 rounded-full"
+                      style={{ width: "75%" }}
+                    ></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -889,9 +570,9 @@ export default function Home() {
             <div className="md:col-span-2">
               <h3 className="text-xl font-light mb-4">Portfolio</h3>
               <p className="text-slate-300 mb-4 max-w-md">
-                Specialized in computer vision and web development, creating
-                innovative solutions that bridge the gap between complex
-                algorithms and user-friendly interfaces.
+                Specialized in full-stack web development, creating innovative
+                solutions that deliver exceptional user experiences and robust
+                functionality.
               </p>
               <div className="flex items-center text-slate-300">
                 <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
@@ -927,14 +608,6 @@ export default function Home() {
                     Skills
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="#contact"
-                    className="hover:text-white transition-colors"
-                  >
-                    Contact
-                  </a>
-                </li>
               </ul>
             </div>
 
@@ -942,9 +615,9 @@ export default function Home() {
             <div>
               <h4 className="font-medium mb-4">Specialties</h4>
               <ul className="space-y-2 text-slate-300">
-                <li>Computer Vision</li>
-                <li>Web Development</li>
-                <li>Image Processing</li>
+                <li>Full-Stack Development</li>
+                <li>Web Applications</li>
+                <li>Database Design</li>
                 <li>API Development</li>
               </ul>
             </div>
