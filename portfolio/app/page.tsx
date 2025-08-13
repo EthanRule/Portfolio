@@ -62,8 +62,7 @@ export default function Home() {
         "Computer vision application that tracks basketball shots using machine learning algorithms. Analyzes shooting form, accuracy, and provides performance insights for player improvement.",
       tags: ["Python", "OpenCV", "Machine Learning", "Computer Vision"],
       image: "/Project-Images/ai-shot-tracker.png",
-      githubUrl: "https://github.com/EthanRule/ai-shot-tracker",
-      isPrivate: false,
+      isPrivate: true,
     },
   ];
 
@@ -118,12 +117,27 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="flex justify-center gap-4 mb-8">
-            <button className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105">
-              Download Resume
-            </button>
-            <button className="border border-slate-400 text-slate-300 hover:text-white hover:border-white px-6 py-3 rounded-lg font-medium transition-all duration-300">
-              Get In Touch
-            </button>
+            <a
+              href="/resume/Ethan Rule Resume (4).pdf"
+              download="Ethan_Rule_Resume.pdf"
+              className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2"
+            >
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+              <span>Download Resume</span>
+            </a>
           </div>
         </div>
       </header>
@@ -141,16 +155,17 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-slate-600 leading-relaxed mb-6">
-                Software Engineer with a passion for building innovative
-                applications and solving complex problems. I have experience
-                working with modern web technologies, mobile development, and
-                creating user-focused solutions that make a real impact.
+                Hey I&apos;m Ethan! I'm a software engineer with a passion for
+                building innovative applications with the latest technologies. I
+                have experience using the latest languages such as Typescript
+                and Rust. I also have college experience with languages like
+                C/C++ and Python.
               </p>
               <p className="text-slate-600 leading-relaxed mb-6">
                 My expertise spans full-stack development, from frontend user
-                interfaces to backend systems and databases. I enjoy learning
-                new technologies and applying them to create efficient,
-                scalable, and maintainable software solutions.
+                interfaces to backend systems and machine learning pipelines. I
+                enjoy learning new technologies any applying them to create
+                maintainable evergreen software solutions.
               </p>
 
               {/* Key Stats */}
@@ -160,7 +175,7 @@ export default function Home() {
                   <div className="text-sm text-slate-600">Projects</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-slate-900">3+</div>
+                  <div className="text-2xl font-bold text-slate-900">4+</div>
                   <div className="text-sm text-slate-600">Years Experience</div>
                 </div>
                 <div className="text-center">
@@ -185,11 +200,11 @@ export default function Home() {
                 </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                  <span className="text-slate-700">Database Design</span>
+                  <span className="text-slate-700">Low Level Programming</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
-                  <span className="text-slate-700">API Development</span>
+                  <span className="text-slate-700">Machine Learning</span>
                 </div>
               </div>
             </div>
@@ -197,7 +212,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -211,9 +225,9 @@ export default function Home() {
                   Frontend
                 </h3>
                 <p className="text-xs text-slate-500 font-mono leading-relaxed">
-                  React • JavaScript
+                  React • Typescript
                   <br />
-                  HTML • CSS
+                  HTML • Tailwindcss
                 </p>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-green-400 transition-all duration-300">
@@ -222,9 +236,9 @@ export default function Home() {
                   Backend
                 </h3>
                 <p className="text-xs text-slate-500 font-mono leading-relaxed">
-                  Node.js • Python
+                  Typescript • C# • Python • Rust
                   <br />
-                  APIs • Databases
+                  MongoDB • PostgreSQL
                 </p>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-purple-400 transition-all duration-300">
@@ -233,9 +247,9 @@ export default function Home() {
                   Mobile
                 </h3>
                 <p className="text-xs text-slate-500 font-mono leading-relaxed">
-                  React Native
+                  Kotlin • Android Studio
                   <br />
-                  iOS • Android
+                  Android • Mobile First CSS
                 </p>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-orange-400 transition-all duration-300">
@@ -244,9 +258,9 @@ export default function Home() {
                   Tools
                 </h3>
                 <p className="text-xs text-slate-500 font-mono leading-relaxed">
-                  Git • Docker
+                  Git • Copilot
                   <br />
-                  VS Code • AWS
+                  VS Code • Neovim Basics
                 </p>
               </div>
             </div>
@@ -391,255 +405,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-light text-slate-900 mb-6">
-              Technical Skills
-            </h2>
-            <div className="h-0.5 w-24 bg-slate-300 mx-auto mb-8"></div>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              A comprehensive toolkit focused on full-stack development, modern
-              web technologies, and software engineering best practices.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Frontend */}
-            <div className="text-center">
-              <div className="bg-slate-50 p-6 rounded-xl mb-4">
-                <div className="text-2xl mb-3">⚛️</div>
-                <h3 className="font-medium text-slate-900 mb-3">
-                  Frontend Development
-                </h3>
-                <div className="space-y-2 text-sm text-slate-600">
-                  <div>React & Next.js</div>
-                  <div>TypeScript</div>
-                  <div>Tailwind CSS</div>
-                  <div>JavaScript ES6+</div>
-                  <div>Responsive Design</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Backend */}
-            <div className="text-center">
-              <div className="bg-slate-50 p-6 rounded-xl mb-4">
-                <div className="text-2xl mb-3">�️</div>
-                <h3 className="font-medium text-slate-900 mb-3">
-                  Backend Development
-                </h3>
-                <div className="space-y-2 text-sm text-slate-600">
-                  <div>Node.js & Express</div>
-                  <div>Python & Flask</div>
-                  <div>RESTful APIs</div>
-                  <div>Database Design</div>
-                  <div>Authentication</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Database & Cloud */}
-            <div className="text-center">
-              <div className="bg-slate-50 p-6 rounded-xl mb-4">
-                <div className="text-2xl mb-3">☁️</div>
-                <h3 className="font-medium text-slate-900 mb-3">
-                  Database & Cloud
-                </h3>
-                <div className="space-y-2 text-sm text-slate-600">
-                  <div>MongoDB & PostgreSQL</div>
-                  <div>Firebase</div>
-                  <div>AWS Services</div>
-                  <div>Docker</div>
-                  <div>Vercel & Netlify</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Tools & Platforms */}
-            <div className="text-center">
-              <div className="bg-slate-50 p-6 rounded-xl mb-4">
-                <div className="text-2xl mb-3">🛠️</div>
-                <h3 className="font-medium text-slate-900 mb-3">
-                  Tools & DevOps
-                </h3>
-                <div className="space-y-2 text-sm text-slate-600">
-                  <div>Git & GitHub</div>
-                  <div>VS Code</div>
-                  <div>Webpack & Vite</div>
-                  <div>Testing Frameworks</div>
-                  <div>CI/CD Pipelines</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Skill Progress Bars */}
-          <div className="mt-12 max-w-4xl mx-auto">
-            <h3 className="text-xl font-medium text-slate-900 mb-8 text-center">
-              Proficiency Overview
-            </h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-slate-700">
-                      React & Next.js
-                    </span>
-                    <span className="text-sm text-slate-500">90%</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div
-                      className="bg-slate-600 h-2 rounded-full"
-                      style={{ width: "90%" }}
-                    ></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-slate-700">
-                      JavaScript/TypeScript
-                    </span>
-                    <span className="text-sm text-slate-500">88%</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div
-                      className="bg-slate-600 h-2 rounded-full"
-                      style={{ width: "88%" }}
-                    ></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-slate-700">
-                      Node.js & Python
-                    </span>
-                    <span className="text-sm text-slate-500">85%</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div
-                      className="bg-slate-600 h-2 rounded-full"
-                      style={{ width: "85%" }}
-                    ></div>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-6">
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-slate-700">
-                      Database Design
-                    </span>
-                    <span className="text-sm text-slate-500">82%</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div
-                      className="bg-slate-600 h-2 rounded-full"
-                      style={{ width: "82%" }}
-                    ></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-slate-700">
-                      Cloud & DevOps
-                    </span>
-                    <span className="text-sm text-slate-500">78%</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div
-                      className="bg-slate-600 h-2 rounded-full"
-                      style={{ width: "78%" }}
-                    ></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-slate-700">
-                      Mobile Development
-                    </span>
-                    <span className="text-sm text-slate-500">75%</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div
-                      className="bg-slate-600 h-2 rounded-full"
-                      style={{ width: "75%" }}
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            {/* Brand Section */}
-            <div className="md:col-span-2">
-              <h3 className="text-xl font-light mb-4">Portfolio</h3>
-              <p className="text-slate-300 mb-4 max-w-md">
-                Specialized in full-stack web development, creating innovative
-                solutions that deliver exceptional user experiences and robust
-                functionality.
-              </p>
-              <div className="flex items-center text-slate-300">
-                <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-                Available for work
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="font-medium mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-slate-300">
-                <li>
-                  <a
-                    href="#projects"
-                    className="hover:text-white transition-colors"
-                  >
-                    Projects
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#about"
-                    className="hover:text-white transition-colors"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#skills"
-                    className="hover:text-white transition-colors"
-                  >
-                    Skills
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div>
-              <h4 className="font-medium mb-4">Specialties</h4>
-              <ul className="space-y-2 text-slate-300">
-                <li>Full-Stack Development</li>
-                <li>Web Applications</li>
-                <li>Database Design</li>
-                <li>API Development</li>
-              </ul>
-            </div>
-          </div>
-
           {/* Bottom Section */}
-          <div className="pt-8 border-t border-slate-700">
+          <div className=" border-slate-700">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="text-slate-400 text-sm mb-4 md:mb-0">
-                © 2024 Portfolio. Built with Next.js and Tailwind CSS.
+                © 2025 Ethan Rule Portfolio
               </div>
               <div className="flex space-x-6">
                 <a
