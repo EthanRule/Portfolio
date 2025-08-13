@@ -57,12 +57,13 @@ export default function Home() {
     },
     {
       id: 4,
-      title: "AI Basketball Shot Tracker 📋",
+      title: "WoW Addons",
       description:
-        "Computer vision application that tracks basketball shots using machine learning algorithms. Analyzes shooting form, accuracy, and provides performance insights for player improvement.",
+        "Built two addons using Lua one for mass player messaging and one for a gameplay enhancement. Combined, these have over a thousand downloads.",
       tags: ["Python", "OpenCV", "Machine Learning", "Computer Vision"],
-      image: "/Project-Images/ai-shot-tracker.png",
-      isPrivate: true,
+      image: "/Project-Images/whispermacros.png",
+      isPrivate: false,
+      githubUrl: "https://github.com/EthanRule/WhisperMacros",
     },
   ];
 
