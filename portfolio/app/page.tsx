@@ -1,16 +1,18 @@
 "use client";
 import { useState, useEffect } from "react";
-import Project from "@/components/Project";
-import Image from "next/image";
-import { Suspense } from "react";
+import Header from "@/components/Header";
+import AboutMe from "@/components/AboutMe";
+import TechnicalSkills from "@/components/TechnicalSkills";
+import FeaturedProjects from "@/components/FeaturedProjects";
+import Footer from "@/components/Footer";
+import { Project } from "@/types/project";
 
 export default function Home() {
-  const [currentYear, setCurrentYear] = useState("2023");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(true);
 
-  const projects = [
+  const projects: Project[] = [
     {
       id: 1,
       title: "Rudarz.com ✅",
@@ -60,16 +62,12 @@ export default function Home() {
       title: "WoW Addons",
       description:
         "Built two addons using Lua one for mass player messaging and one for a gameplay enhancement. Combined, these have over a thousand downloads.",
-      tags: ["Python", "OpenCV", "Machine Learning", "Computer Vision"],
+      tags: ["Lua"],
       image: "/Project-Images/whispermacros.png",
       isPrivate: false,
       githubUrl: "https://github.com/EthanRule/WhisperMacros",
     },
   ];
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear().toString());
-  }, []);
 
   // Auto-scroll carousel every 10 seconds, with 15-second pause on interaction
   useEffect(() => {
@@ -77,7 +75,7 @@ export default function Home() {
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => prev + 1);
-    }, 10000); // 10 seconds
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [isCarouselPaused]);
@@ -91,7 +89,7 @@ export default function Home() {
         setTimeout(() => {
           setIsTransitioning(true);
         }, 50);
-      }, 700); // Wait for transition to complete
+      }, 700);
     }
   }, [currentSlide, projects.length]);
 
@@ -100,14 +98,12 @@ export default function Home() {
     setIsCarouselPaused(true);
     setTimeout(() => {
       setIsCarouselPaused(false);
-    }, 15000); // 15 seconds
+    }, 15000);
   };
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      {/* Enhanced Header */}
       <header className="bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
-        {/* Animated accent elements */}
         <div className="max-w-7xl mx-auto pt-20 pb-16 px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-5xl font-light text-white mb-4 tracking-wide">
             Ethan Rule
@@ -116,7 +112,6 @@ export default function Home() {
             Software Engineer
           </p>
 
-          {/* CTA Buttons */}
           <div className="flex justify-center gap-4 mb-8">
             <a
               href="/resume/Ethan Rule Resume (4).pdf"
@@ -143,7 +138,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* About Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -169,7 +163,6 @@ export default function Home() {
                 maintainable evergreen software solutions.
               </p>
 
-              {/* Key Stats */}
               <div className="grid grid-cols-3 gap-4 mt-8">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-slate-900">10+</div>
@@ -269,9 +262,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
       <section className="relative py-20 bg-white">
-        {/* Projects Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-light text-slate-900 mb-4">
@@ -280,7 +271,6 @@ export default function Home() {
             <div className="h-0.5 w-24 bg-slate-300 mx-auto"></div>
           </div>
 
-          {/* Horizontal Scrolling Carousel */}
           <div
             className="relative overflow-hidden"
             onMouseEnter={handleUserInteraction}
@@ -311,7 +301,6 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-              {/* Duplicate first project for seamless loop */}
               <div
                 key={`${projects[0].id}-duplicate`}
                 className="flex-shrink-0 w-full px-4"
@@ -330,7 +319,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Carousel Indicators */}
             <div className="flex justify-center mt-12 space-x-3">
               {projects.map((_, index) => (
                 <button
@@ -348,7 +336,6 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Navigation Arrows */}
             <button
               onClick={() => {
                 setCurrentSlide((prev) => {
@@ -406,10 +393,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {/* Bottom Section */}
           <div className=" border-slate-700">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="text-slate-400 text-sm mb-4 md:mb-0">
