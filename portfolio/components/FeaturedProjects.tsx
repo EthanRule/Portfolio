@@ -1,23 +1,100 @@
+import { useState, useEffect } from "react";
 import { Project as ProjectType } from "@/types/project";
 import Project from "./Project";
 
-interface FeaturedProjectsProps {
-  projects: ProjectType[];
-  currentSlide: number;
-  isTransitioning: boolean;
-  setCurrentSlide: (value: number | ((prev: number) => number)) => void;
-  setIsTransitioning: (value: boolean) => void;
-  handleUserInteraction: () => void;
-}
+export default function FeaturedProjects() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isCarouselPaused, setIsCarouselPaused] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(true);
 
-export default function FeaturedProjects({
-  projects,
-  currentSlide,
-  isTransitioning,
-  setCurrentSlide,
-  setIsTransitioning,
-  handleUserInteraction,
-}: FeaturedProjectsProps) {
+  const projects: ProjectType[] = [
+    {
+      id: 1,
+      title: "Rudarz.com ✅",
+      description:
+        "Built a course website based on my personal competetion experience, which has helped over 250 players and has generated over $2500 in personal revenue.",
+      tags: [
+        "Typescript",
+        "React",
+        "TailwindCSS",
+        "Node.js",
+        "PostgreSQL",
+        "Stripe",
+        "Next-Auth",
+        "Vercel",
+      ],
+      image: "/Project-Images/Rudarz.com.png",
+      isPrivate: true,
+    },
+    {
+      id: 2,
+      title: "AI Shot Detection ✅",
+      description:
+        "Developed a machine-learning Android app to help basketball players improve their skills. Placed 3rd out of 20 for the Winter 2024 Computer Science Capstone project competetion",
+      tags: [
+        "Kotlin",
+        "Roboflow",
+        "Google MediaPipe",
+        "Tensorflow",
+        "FFmpeg",
+        "Android Studio",
+      ],
+      image: "/Project-Images/ai-shot-tracker.png",
+      isPrivate: true,
+    },
+    {
+      id: 3,
+      title: "Rust Database Engine",
+      description:
+        "Engineered a partial custom document based database engine in Rust using BTree-backed storage system and BSON serialization. Also built two Rust web servers pinned on my GitHub.",
+      tags: ["Rust", "Cargo"],
+      image: "/Project-Images/rust.png",
+      githubUrl: "https://github.com/EthanRule/rust_database_engine",
+      isPrivate: false,
+    },
+    {
+      id: 4,
+      title: "WoW Addons",
+      description:
+        "Built two addons using Lua one for mass player messaging and one for a gameplay enhancement. Combined, these have over a thousand downloads.",
+      tags: ["Lua"],
+      image: "/Project-Images/whispermacros.png",
+      isPrivate: false,
+      githubUrl: "https://github.com/EthanRule/WhisperMacros",
+    },
+  ];
+
+  // Auto-scroll carousel every 10 seconds, with 15-second pause on interaction
+  useEffect(() => {
+    if (isCarouselPaused) return;
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => prev + 1);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [isCarouselPaused]);
+
+  // Handle infinite loop transition
+  useEffect(() => {
+    if (currentSlide === projects.length) {
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentSlide(0);
+        setTimeout(() => {
+          setIsTransitioning(true);
+        }, 50);
+      }, 700);
+    }
+  }, [currentSlide, projects.length]);
+
+  // Function to handle user interaction (pauses carousel for 15 seconds)
+  const handleUserInteraction = () => {
+    setIsCarouselPaused(true);
+    setTimeout(() => {
+      setIsCarouselPaused(false);
+    }, 15000);
+  };
   return (
     <section className="relative py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
