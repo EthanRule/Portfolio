@@ -1,64 +1,89 @@
+import Image from "next/image";
+
 export default function AboutMe() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section
+      id="about"
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-slate-100"
+    >
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-light text-slate-900 mb-6">About Me</h2>
-          <div className="h-0.5 w-24 bg-slate-300 mx-auto mb-8"></div>
+          <h2 className="text-4xl font-bold text-slate-900 mb-4">About Me</h2>
+          <div className="flex items-center justify-center relative">
+            <div className="w-1.5 h-1.5 rounded-full bg-[rgb(100,149,237)] shadow-lg shadow-[rgba(100,149,237,0.5)]"></div>
+            <div className="w-12 h-0.5 bg-gradient-to-r from-[rgb(100,149,237)] to-[rgb(100,149,237)] mx-1 shadow-sm shadow-[rgba(100,149,237,0.3)] transform rotate-2"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-[rgb(100,149,237)] shadow-lg shadow-[rgba(100,149,237,0.5)] relative -top-0.5"></div>
+            <div className="w-16 h-0.5 bg-gradient-to-r from-[rgb(100,149,237)] to-[rgb(100,149,237)] mx-1 shadow-sm shadow-[rgba(100,149,237,0.3)] transform -rotate-1"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-[rgb(100,149,237)] shadow-lg shadow-[rgba(100,149,237,0.5)] relative top-1"></div>
+            <div className="w-8 h-0.5 bg-gradient-to-r from-[rgb(100,149,237)] to-[rgb(100,149,237)] mx-1 shadow-sm shadow-[rgba(100,149,237,0.3)] transform rotate-3"></div>
+            <div className="w-2 h-2 rounded-full bg-[rgb(100,149,237)] shadow-lg shadow-[rgba(100,149,237,0.5)] relative -top-1"></div>
+            <div className="w-14 h-0.5 bg-gradient-to-r from-[rgb(100,149,237)] to-[rgb(100,149,237)] mx-1 shadow-sm shadow-[rgba(100,149,237,0.3)] transform -rotate-2"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-[rgb(100,149,237)] shadow-lg shadow-[rgba(100,149,237,0.5)] relative top-0.5"></div>
+          </div>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-slate-600 leading-relaxed mb-6">
-              Hey I&apos;m Ethan! I'm a software engineer with a passion for
-              building innovative applications with the latest technologies. I
-              have experience using the latest languages such as Typescript and
-              Rust. I also have college experience with languages like C/C++ and
-              Python.
-            </p>
-            <p className="text-slate-600 leading-relaxed mb-6">
-              My expertise spans full-stack development, from frontend user
-              interfaces to backend systems and machine learning pipelines. I
-              enjoy learning new technologies any applying them to create
-              maintainable evergreen software solutions.
-            </p>
-
-            <div className="grid grid-cols-3 gap-4 mt-8">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-slate-900">10+</div>
-                <div className="text-sm text-slate-600">Projects</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-slate-900">4+</div>
-                <div className="text-sm text-slate-600">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-slate-900">15+</div>
-                <div className="text-sm text-slate-600">Technologies</div>
-              </div>
+        <div className="grid md:grid-cols-3 gap-12 items-start">
+          {/* Profile Picture */}
+          <div className="flex justify-center md:justify-start">
+            <div className="relative">
+              <Image
+                src="/Me/pfp.jpg"
+                alt="Ethan Rule - Software Engineer"
+                width={280}
+                height={280}
+                className="rounded-2xl shadow-lg object-cover"
+                priority
+              />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-slate-900/10"></div>
             </div>
           </div>
 
-          <div className="bg-slate-50 p-8 rounded-xl">
-            <h3 className="text-lg font-medium text-slate-900 mb-6">
-              Core Expertise
-            </h3>
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-emerald-500 rounded-full mr-3"></div>
-                <span className="text-slate-700">Full-Stack Development</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
-                <span className="text-slate-700">Web Applications</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                <span className="text-slate-700">Low Level Programming</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
-                <span className="text-slate-700">Machine Learning</span>
+          {/* About Text */}
+          <div className="md:col-span-2">
+            <div className="mb-6">
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Hey, I&apos;m Ethan! I&apos;m a software engineer passionate
+                about building innovative applications with modern technologies.
+                I work with languages like TypeScript and Rust, and also have
+                experience in C, C++, and Python.
+              </p>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                My expertise spans full-stack development—from frontend
+                interfaces to backend systems and machine learning pipelines. I
+                enjoy exploring new tools and applying them to create
+                maintainable, long-lasting software solutions.
+              </p>
+            </div>
+
+            {/* Skills Grid */}
+            <div className="md:bg-transparent bg-slate-200 md:p-0 p-6 rounded-xl">
+              <h3 className="text-lg md:font-medium font-bold text-slate-900 mb-4">
+                Technical Focus
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full mr-2 flex-shrink-0"></div>
+                  <span className="text-slate-700 text-sm">
+                    Full-Stack Development
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full mr-2 flex-shrink-0"></div>
+                  <span className="text-slate-700 text-sm">
+                    Machine Learning
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full mr-2 flex-shrink-0"></div>
+                  <span className="text-slate-700 text-sm">
+                    Web Applications
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full mr-2 flex-shrink-0"></div>
+                  <span className="text-slate-700 text-sm">
+                    Systems Programming
+                  </span>
+                </div>
               </div>
             </div>
           </div>
