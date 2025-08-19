@@ -2,6 +2,7 @@
 import Header from "@/components/Header";
 import AboutMe from "@/components/AboutMe";
 import TechnicalSkills from "@/components/TechnicalSkills";
+import Academics from "@/components/Academics";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import Footer from "@/components/Footer";
 
@@ -11,6 +12,7 @@ export default function Home() {
       <Header />
       <AboutMe />
       <TechnicalSkills />
+      <Academics />
       <FeaturedProjects />
       <Footer />
     </div>

@@ -1,12 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Project as ProjectType } from "@/types/project";
 import Project from "./Project";
 
 export default function FeaturedProjects() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isCarouselPaused, setIsCarouselPaused] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(true);
-
   const projects: ProjectType[] = [
     {
       id: 1,
@@ -24,6 +20,7 @@ export default function FeaturedProjects() {
         "Vercel",
       ],
       image: "/Project-Images/Rudarz.com.png",
+      websiteUrl: "https://rudarz.com",
       isPrivate: true,
     },
     {
@@ -64,165 +61,51 @@ export default function FeaturedProjects() {
     },
   ];
 
-  // Auto-scroll carousel every 10 seconds, with 15-second pause on interaction
-  useEffect(() => {
-    if (isCarouselPaused) return;
-
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => prev + 1);
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, [isCarouselPaused]);
-
-  // Handle infinite loop transition
-  useEffect(() => {
-    if (currentSlide === projects.length) {
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentSlide(0);
-        setTimeout(() => {
-          setIsTransitioning(true);
-        }, 50);
-      }, 700);
-    }
-  }, [currentSlide, projects.length]);
-
-  // Function to handle user interaction (pauses carousel for 15 seconds)
-  const handleUserInteraction = () => {
-    setIsCarouselPaused(true);
-    setTimeout(() => {
-      setIsCarouselPaused(false);
-    }, 15000);
-  };
   return (
-    <section className="relative py-20 bg-white">
+    <section
+      id="projects"
+      className="relative py-16 pb-20 bg-gradient-to-b from-slate-200 to-slate-300"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-light text-slate-900 mb-4">
+          <h2 className="text-4xl font-bold text-slate-900 mb-4">
             Featured Projects
           </h2>
-          <div className="h-0.5 w-24 bg-slate-300 mx-auto"></div>
+          <div className="flex items-center justify-center relative">
+            <div className="w-1.5 h-1.5 rounded-full bg-[rgb(100,149,237)] shadow-lg shadow-[rgba(100,149,237,0.5)] relative top-0.5"></div>
+            <div className="w-8 h-0.5 bg-gradient-to-r from-[rgb(100,149,237)] to-[rgb(100,149,237)] mx-1 shadow-sm shadow-[rgba(100,149,237,0.3)] transform rotate-2"></div>
+            <div className="w-2 h-2 rounded-full bg-[rgb(100,149,237)] shadow-lg shadow-[rgba(100,149,237,0.5)] relative top-0.5"></div>
+            <div className="w-18 h-0.5 bg-gradient-to-r from-[rgb(100,149,237)] to-[rgb(100,149,237)] mx-1 shadow-sm shadow-[rgba(100,149,237,0.3)] transform -rotate-1"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-[rgb(100,149,237)] shadow-lg shadow-[rgba(100,149,237,0.5)] relative -top-1"></div>
+            <div className="w-12 h-0.5 bg-gradient-to-r from-[rgb(100,149,237)] to-[rgb(100,149,237)] mx-1 shadow-sm shadow-[rgba(100,149,237,0.3)] transform rotate-3"></div>
+            <div className="w-3 h-3 rounded-full bg-[rgb(100,149,237)] shadow-lg shadow-[rgba(100,149,237,0.8)]"></div>
+            <div className="w-16 h-0.5 bg-gradient-to-r from-[rgb(100,149,237)] to-[rgb(100,149,237)] mx-1 shadow-sm shadow-[rgba(100,149,237,0.3)] transform -rotate-2"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-[rgb(100,149,237)] shadow-lg shadow-[rgba(100,149,237,0.5)] relative top-1"></div>
+            <div className="w-14 h-0.5 bg-gradient-to-r from-[rgb(100,149,237)] to-[rgb(100,149,237)] mx-1 shadow-sm shadow-[rgba(100,149,237,0.3)] transform rotate-1"></div>
+            <div className="w-2 h-2 rounded-full bg-[rgb(100,149,237)] shadow-lg shadow-[rgba(100,149,237,0.5)] relative -top-0.5"></div>
+            <div className="w-10 h-0.5 bg-gradient-to-r from-[rgb(100,149,237)] to-[rgb(100,149,237)] mx-1 shadow-sm shadow-[rgba(100,149,237,0.3)] transform -rotate-1"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-[rgb(100,149,237)] shadow-lg shadow-[rgba(100,149,237,0.5)] relative top-0.5"></div>
+          </div>
         </div>
 
-        <div
-          className="relative overflow-hidden"
-          onMouseEnter={handleUserInteraction}
-        >
-          <div
-            className={`flex ${
-              isTransitioning
-                ? "transition-transform duration-700 ease-in-out"
-                : ""
-            }`}
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-          >
-            {projects.map((project, index) => (
-              <div
-                key={`${project.id}-${index}`}
-                className="flex-shrink-0 w-full px-4"
-              >
-                <div className="max-w-2xl mx-auto">
-                  <Project
-                    id={project.id}
-                    title={project.title}
-                    description={project.description}
-                    tags={project.tags}
-                    image={project.image}
-                    githubUrl={project.githubUrl}
-                    isPrivate={project.isPrivate}
-                  />
-                </div>
-              </div>
-            ))}
-            <div
-              key={`${projects[0].id}-duplicate`}
-              className="flex-shrink-0 w-full px-4"
-            >
-              <div className="max-w-2xl mx-auto">
+        {/* 2x2 Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {projects.map((project) => (
+            <div key={project.id} className="flex justify-center">
+              <div className="w-full max-w-lg">
                 <Project
-                  id={projects[0].id}
-                  title={projects[0].title}
-                  description={projects[0].description}
-                  tags={projects[0].tags}
-                  image={projects[0].image}
-                  githubUrl={projects[0].githubUrl}
-                  isPrivate={projects[0].isPrivate}
+                  id={project.id}
+                  title={project.title}
+                  description={project.description}
+                  tags={project.tags}
+                  image={project.image}
+                  githubUrl={project.githubUrl}
+                  websiteUrl={project.websiteUrl}
+                  isPrivate={project.isPrivate}
                 />
               </div>
             </div>
-          </div>
-
-          <div className="flex justify-center mt-12 space-x-3">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setCurrentSlide(index);
-                  handleUserInteraction();
-                }}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentSlide % projects.length
-                    ? "bg-slate-600 scale-125"
-                    : "bg-slate-300 hover:bg-slate-400"
-                }`}
-              />
-            ))}
-          </div>
-
-          <button
-            onClick={() => {
-              setCurrentSlide((prev) => {
-                if (prev === 0) {
-                  setIsTransitioning(false);
-                  const newSlide = projects.length;
-                  setTimeout(() => {
-                    setIsTransitioning(true);
-                    setCurrentSlide(projects.length - 1);
-                  }, 50);
-                  return newSlide;
-                }
-                return prev - 1;
-              });
-              handleUserInteraction();
-            }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-slate-800/80 hover:bg-slate-700 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-          <button
-            onClick={() => {
-              setCurrentSlide((prev) => prev + 1);
-              handleUserInteraction();
-            }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-slate-800/80 hover:bg-slate-700 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
+          ))}
         </div>
       </div>
     </section>

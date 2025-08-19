@@ -5,5 +5,6 @@ export interface Project {
   tags: string[];
   image: string;
   githubUrl?: string;
+  websiteUrl?: string;
   isPrivate?: boolean;
 }
