@@ -64,6 +64,7 @@ export default function Header() {
               >
                 Projects
               </button>
+              i
             </div>
 
             {/* Mobile menu button */}
@@ -99,8 +100,8 @@ export default function Header() {
         {/* Download Resume Button - Fixed Top Right */}
         <div className="fixed top-2.5 right-2.5 z-50">
           <a
-            href="/resume/Ethan Rule Resume (4).pdf"
-            download="Ethan_Rule_Resume.pdf"
+            href="/resume/ethan_rule_resume.pdf"
+            download="ethan_rule_resume.pdf"
             className="bg-slate-900 hover:bg-slate-600 border border-slate-600 hover:border-slate-500 text-white p-2 rounded-lg transition-all duration-300 hover:scale-105 inline-flex items-center group shadow-lg"
             title="Download Resume"
           >
@@ -126,7 +127,7 @@ export default function Header() {
             Ethan Rule
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 font-mono">
-            CS Graduate • Building cool sh*t
+            CS Graduate • Software Engineer
           </p>
         </div>
       </header>
