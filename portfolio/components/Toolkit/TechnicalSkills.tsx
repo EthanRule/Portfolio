@@ -1,6 +1,8 @@
-import Image from "next/image";
+"use client";
+import { CodeSnippit } from "./CodeSnippit";
+import { ToolImage } from "./ToolImage";
 
-export default function TechnicalSkills() {
+export default function Toolkit() {
   return (
     <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8 bg-zinc-950 ">
       <div className="max-w-4xl mx-auto">
@@ -25,52 +27,41 @@ export default function TechnicalSkills() {
             What I use on a daily basis.
           </p>
 
-          <div className="flex flex-row gap-4">
-            <Image
+          <div className="flex flex-row gap-4 mt-20">
+            <ToolImage
               src="/Project-Images/tools/ts.png"
               alt="Typescript"
-              width={64}
-              height={64}
-              className="rounded-lg shadow-md shadow-blue-400"
+              shadowColor="blue-400"
             />
-            <Image
+            <ToolImage
               src="/Project-Images/tools/git.png"
               alt="Git"
-              width={64}
-              height={64}
-              className="rounded-lg shadow-md shadow-amber-400"
+              shadowColor="amber-400"
             />
-            <Image
+            <ToolImage
               src="/Project-Images/tools/github.png"
               alt="GitHub"
-              width={64}
-              height={64}
-              className="rounded-lg shadow-md shadow-purple-800"
+              shadowColor="purple-800"
             />
-            <Image
+            <ToolImage
               src="/Project-Images/tools/nextjs.png"
               alt="Nextjs"
-              width={64}
-              height={64}
-              className="rounded-lg shadow-md shadow-white"
+              shadowColor="white"
             />
-            <Image
+            <ToolImage
               src="/Project-Images/tools/react.png"
               alt="React"
-              width={64}
-              height={64}
-              className="rounded-lg shadow-md shadow-cyan-400"
+              shadowColor="cyan-400"
             />
-            <Image
+            <ToolImage
               src="/Project-Images/tools/tailwind.png"
               alt="Tailwind"
-              width={64}
-              height={64}
-              className="rounded-lg shadow-md shadow-cyan-700"
+              shadowColor="cyan-700"
             />
           </div>
         </div>
       </div>
+      <CodeSnippit />
     </section>
   );
 }
