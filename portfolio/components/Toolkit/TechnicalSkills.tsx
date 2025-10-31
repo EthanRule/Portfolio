@@ -1,5 +1,4 @@
 "use client";
-import { CodeSnippit } from "./CodeSnippit";
 import { ToolImage } from "./ToolImage";
 
 export default function Toolkit() {
@@ -23,15 +22,16 @@ export default function Toolkit() {
             <div className="w-8 h-0.5 bg-gradient-to-r from-[rgb(100,149,237)] to-[rgb(100,149,237)] mx-1 shadow-sm shadow-[rgba(100,149,237,0.3)] transform -rotate-1"></div>
             <div className="w-1.5 h-1.5 rounded-full bg-[rgb(100,149,237)] shadow-lg shadow-[rgba(100,149,237,0.5)] relative top-0.5"></div>
           </div>
-          <p className="text-blue-400 mt-4 text-lg font-bold">
-            What I use on a daily basis.
+          <p className="text-zinc-300 mt-4 text-lg font-bold">
+            What I use on a <span className="italic">daily</span> basis.
           </p>
 
-          <div className="flex flex-row gap-4 mt-20">
+          <div></div>
+          <div className="flex justify-center flex-row gap-4 mt-20">
             <ToolImage
-              src="/Project-Images/tools/ts.png"
-              alt="Typescript"
-              shadowColor="blue-400"
+              src="/Project-Images/tools/ubuntu.png"
+              alt="Ubuntu"
+              shadowColor="amber-400"
             />
             <ToolImage
               src="/Project-Images/tools/git.png"
@@ -44,9 +44,19 @@ export default function Toolkit() {
               shadowColor="purple-800"
             />
             <ToolImage
-              src="/Project-Images/tools/nextjs.png"
-              alt="Nextjs"
+              src="/Project-Images/tools/cursor.png"
+              alt="Cursor"
               shadowColor="white"
+            />
+            <ToolImage
+              src="/Project-Images/tools/neovim.png"
+              alt="Postgresql"
+              shadowColor="green-500"
+            />
+            <ToolImage
+              src="/Project-Images/tools/ts.png"
+              alt="Typescript"
+              shadowColor="blue-400"
             />
             <ToolImage
               src="/Project-Images/tools/react.png"
@@ -58,10 +68,19 @@ export default function Toolkit() {
               alt="Tailwind"
               shadowColor="cyan-700"
             />
+            <ToolImage
+              src="/Project-Images/tools/nextjs.png"
+              alt="Nextjs"
+              shadowColor="white"
+            />
+            <ToolImage
+              src="/Project-Images/tools/postgresql.png"
+              alt="Postgresql"
+              shadowColor="blue-600"
+            />
           </div>
         </div>
       </div>
-      <CodeSnippit />
     </section>
   );
 }
