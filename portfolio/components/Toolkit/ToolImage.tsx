@@ -18,6 +18,7 @@ export function ToolImage({
     white: "rounded-lg shadow-lg shadow-white",
     "cyan-400": "rounded-lg shadow-lg shadow-cyan-400",
     "cyan-700": "rounded-lg shadow-lg shadow-cyan-700",
+    "green-500": "rounded-lg shadow-lg shadow-green-500",
   };
 
   return (

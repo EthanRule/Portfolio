@@ -62,13 +62,10 @@ export default function FeaturedProjects() {
   ];
 
   return (
-    <section
-      id="projects"
-      className="relative py-16 pb-20 bg-gradient-to-b from-slate-200 to-slate-300"
-    >
+    <section id="projects" className="relative py-16 pb-20 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl font-bold text-blue-400 mb-4">
             Featured Projects
           </h2>
           <div className="flex items-center justify-center relative">
