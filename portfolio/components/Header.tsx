@@ -41,24 +41,6 @@ export default function Header() {
             {/* Navigation Links */}
             <div className="hidden md:flex space-x-6 mr-20">
               <button
-                onClick={() => scrollToSection("about")}
-                className="text-slate-300 hover:text-white transition-colors duration-200 font-medium"
-              >
-                About Me
-              </button>
-              <button
-                onClick={() => scrollToSection("skills")}
-                className="text-slate-300 hover:text-white transition-colors duration-200 font-medium"
-              >
-                Skills
-              </button>
-              <button
-                onClick={() => scrollToSection("academics")}
-                className="text-slate-300 hover:text-white transition-colors duration-200 font-medium"
-              >
-                Academics
-              </button>
-              <button
                 onClick={() => scrollToSection("projects")}
                 className="text-slate-300 hover:text-white transition-colors duration-200 font-medium"
               >
