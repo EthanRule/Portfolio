@@ -4,12 +4,14 @@ import { ToolImage } from "./ToolImage";
 export default function Toolkit() {
   return (
     <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8 bg-zinc-950 ">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-sm mx-auto">
         <div className="text-center mb-12">
-          <p className="text-zinc-300 mt-4 text-lg font-bold">
-            What I use on a <span className="italic">daily</span> basis.
-          </p>
-          <div></div>
+          <div className="bg-zinc-900/50 p-6 rounded-lg border border-zinc-700">
+            <p className="text-zinc-300 text-lg font-bold">
+              What I use on a <span className="italic">daily</span> basis.
+            </p>
+          </div>
+
           <div className="flex justify-center flex-row gap-4 mt-20">
             <ToolImage
               src="/Project-Images/tools/ubuntu.png"
