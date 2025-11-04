@@ -19,7 +19,7 @@ export default function Project({
   isPrivate = false,
 }: ProjectProps) {
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-slate-200 h-[420px] flex flex-col">
+    <div className="bg-zinc-900/50 rounded-xl shadow-lg overflow-hidden transition-all duration-300 border-t border-b border-zinc-700 h-[420px] flex flex-col">
       <div className="h-32 bg-slate-100 relative flex-shrink-0">
         <img
           src={image}
@@ -28,7 +28,7 @@ export default function Project({
         />
 
         {isPrivate && (
-          <div className="absolute top-2 right-2 bg-amber-500 text-white px-2 py-1 rounded-md text-xs font-semibold flex items-center space-x-1">
+          <div className="absolute top-2 right-2 bg-amber-500 text-zinc-300 px-2 py-1 rounded-md text-xs font-semibold flex items-center space-x-1">
             <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
               <path
                 fillRule="evenodd"
@@ -42,7 +42,7 @@ export default function Project({
       </div>
 
       <div className="p-6 flex-1 flex flex-col">
-        <h3 className="text-lg font-medium text-slate-900 mb-3 line-clamp-2">
+        <h3 className="text-lg font-medium text-zinc-300 mb-3 line-clamp-2">
           {title}
         </h3>
 
@@ -75,7 +75,7 @@ export default function Project({
                 href={websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-lg transition-all duration-300 hover:scale-[1.02] text-sm w-full font-medium bg-slate-800 hover:bg-slate-700 text-white"
+                className="inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-lg transition-all duration-300 hover:scale-[1.02] text-sm w-full font-medium bg-slate-800 hover:bg-slate-700 text-zinc-300"
                 onClick={(e) => e.stopPropagation()}
               >
                 <svg
@@ -101,8 +101,8 @@ export default function Project({
                 rel="noopener noreferrer"
                 className={`inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-lg transition-all duration-300 hover:scale-[1.02] text-sm w-full font-medium ${
                   isPrivate
-                    ? "bg-amber-600 hover:bg-amber-700 text-white"
-                    : "bg-slate-800 hover:bg-slate-700 text-white"
+                    ? "bg-amber-600 hover:bg-amber-700 text-zinc-300"
+                    : "bg-slate-800 hover:bg-slate-700 text-zinc-300"
                 }`}
                 onClick={(e) => e.stopPropagation()}
               >
