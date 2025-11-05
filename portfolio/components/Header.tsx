@@ -38,17 +38,6 @@ export default function Header() {
             {/* Logo/Name - Aligned to left with margin */}
             <div className="text-xl font-bold text-white ml-4">Ethan Rule</div>
 
-            {/* Navigation Links */}
-            <div className="hidden md:flex space-x-6 mr-20">
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="text-slate-300 hover:text-white transition-colors duration-200 font-medium"
-              >
-                Projects
-              </button>
-              i
-            </div>
-
             {/* Mobile menu button */}
             <div className="md:hidden">
               <button

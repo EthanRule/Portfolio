@@ -23,8 +23,8 @@ export default function AboutMe() {
             <div className="bg-zinc-900/50 p-6 rounded-lg border border-zinc-700">
               <p className="text-zinc-300 leading-relaxed">
                 Hey there 👋, I'm Ethan. I write full-stack applications with
-                Next.js and for fun I like to mess around with low level Rust
-                programming. Academically, I've written C/C++, C#, and Python
+                Next.js, Typescript, React, Tailwind, and host on services like
+                AWS and Vercel. Academically, I've written C/C++, C#, and Python
                 covering various domains.
               </p>
             </div>
