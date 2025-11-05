@@ -10,8 +10,8 @@ export default function FeaturedProjects() {
       description: "World of Warcraft Balance Druid PvP course.",
       tags: ["Next.js", "Tailwind", "Vercel"],
       image: "/Project-Images/Rudarz.com.png",
-      websiteUrl: "https://rudarz.com",
-      isPrivate: true,
+      isPrivate: false,
+      githubUrl: "https://github.com/EthanRule/rudarz.com",
     },
 
     {

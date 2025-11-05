@@ -19,12 +19,12 @@ export default function Project({
   isPrivate = false,
 }: ProjectProps) {
   return (
-    <div className="bg-zinc-900/50 rounded-xl shadow-lg overflow-hidden transition-all duration-300 border-t border-b border-zinc-700 h-[420px] flex flex-col">
-      <div className="h-32 bg-slate-100 relative flex-shrink-0">
+    <div className="bg-zinc-900/50 rounded-xl shadow-lg overflow-hidden transition-all duration-300 border border-zinc-700 hover:border-zinc-600 flex flex-col">
+      <div className="h-48 bg-slate-100 relative flex-shrink-0">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover rounded-t-xl"
+          className="w-full h-full object-cover"
         />
 
         {isPrivate && (
@@ -41,41 +41,39 @@ export default function Project({
         )}
       </div>
 
-      <div className="p-6 flex-1 flex flex-col">
-        <h3 className="text-lg font-medium text-zinc-300 mb-3 line-clamp-2">
+      <div className="p-5 flex-1 flex flex-col">
+        <h3 className="text-lg font-medium text-zinc-300 mb-2">
           {title}
         </h3>
+
+        <p className="text-sm text-zinc-400 mb-3 line-clamp-2">
+          {description}
+        </p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.slice(0, 3).map((tag, index) => (
             <span
               key={index}
-              className="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full border border-slate-200 font-medium"
+              className="bg-zinc-800 text-zinc-300 text-xs px-2.5 py-1 rounded-full border border-zinc-700"
             >
               {tag}
             </span>
           ))}
           {tags.length > 3 && (
-            <span className="bg-slate-100 text-slate-500 text-xs px-3 py-1 rounded-full border border-slate-200">
+            <span className="bg-zinc-800 text-zinc-500 text-xs px-2.5 py-1 rounded-full border border-zinc-700">
               +{tags.length - 3}
             </span>
           )}
         </div>
 
-        <div className="flex-1 bg-slate-50 p-4 rounded-lg border border-slate-200 text-sm overflow-hidden">
-          <div className="line-clamp-3 text-slate-600 whitespace-pre-line leading-relaxed">
-            {description}
-          </div>
-        </div>
-
         {(githubUrl || websiteUrl) && (
-          <div className="mt-4 space-y-2">
+          <div className="mt-auto space-y-2">
             {websiteUrl && (
               <a
                 href={websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-lg transition-all duration-300 hover:scale-[1.02] text-sm w-full font-medium bg-slate-800 hover:bg-slate-700 text-zinc-300"
+                className="inline-flex items-center justify-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 hover:scale-[1.02] text-sm w-full font-medium bg-slate-800 hover:bg-slate-700 text-zinc-300"
                 onClick={(e) => e.stopPropagation()}
               >
                 <svg
@@ -99,7 +97,7 @@ export default function Project({
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-lg transition-all duration-300 hover:scale-[1.02] text-sm w-full font-medium ${
+                className={`inline-flex items-center justify-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 hover:scale-[1.02] text-sm w-full font-medium ${
                   isPrivate
                     ? "bg-amber-600 hover:bg-amber-700 text-zinc-300"
                     : "bg-slate-800 hover:bg-slate-700 text-zinc-300"

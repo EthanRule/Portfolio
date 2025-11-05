@@ -4,15 +4,18 @@ import { ToolImage } from "./ToolImage";
 export default function Toolkit() {
   return (
     <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8 bg-zinc-950 ">
-      <div className="max-w-sm mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <div className="bg-zinc-900/50 p-6 rounded-lg border border-zinc-700">
-            <p className="text-zinc-300 text-lg font-bold">
-              What I use on a <span className="italic">daily</span> basis.
-            </p>
-          </div>
+          <h2 className="text-4xl font-bold text-zinc-300 mb-4">Toolkit 🛠️</h2>
+        </div>
+        <div className="bg-zinc-900/50 p-8 rounded-xl border border-zinc-700">
+          <p className="text-zinc-300 text-xl text-center mb-12">
+            What I use on a{" "}
+            <span className="italic font-semibold text-zinc-200">daily</span>{" "}
+            basis.
+          </p>
 
-          <div className="flex justify-center flex-row gap-4 mt-20">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10 gap-6 justify-items-center">
             <ToolImage
               src="/Project-Images/tools/ubuntu.png"
               alt="Ubuntu"
@@ -35,7 +38,7 @@ export default function Toolkit() {
             />
             <ToolImage
               src="/Project-Images/tools/neovim.png"
-              alt="Postgresql"
+              alt="Neovim"
               shadowColor="green-500"
             />
             <ToolImage
