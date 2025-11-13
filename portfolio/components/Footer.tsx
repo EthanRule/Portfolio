@@ -2,20 +2,17 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="bg-slate-900 text-white py-8 px-4 sm:px-6 lg:px-8"
+      className="bg-zinc-900 text-white py-8 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="border-t border-slate-700 pt-8">
+        <div className="border-zinc-700 ">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-slate-400 text-sm font-medium">
-              © 2025 Ethan Rule Portfolio
-            </div>
             <div className="flex items-center space-x-8">
               <a
                 href="https://github.com/EthanRule"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2"
+                className="text-zinc-400 hover:text-zinc-300 transition-colors duration-200 flex items-center space-x-2"
               >
                 <svg
                   className="h-5 w-5"
@@ -35,7 +32,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/ethanrule/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2"
+                className="text-zinc-400 hover:text-zinc-300 transition-colors duration-200 flex items-center space-x-2"
               >
                 <svg
                   className="h-5 w-5"

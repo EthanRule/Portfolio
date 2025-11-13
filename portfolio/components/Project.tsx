@@ -19,13 +19,9 @@ export default function Project({
   isPrivate = false,
 }: ProjectProps) {
   return (
-    <div className="bg-zinc-900/50 rounded-xl shadow-lg overflow-hidden transition-all duration-300 border border-zinc-700 hover:border-zinc-600 flex flex-col">
-      <div className="h-48 bg-slate-100 relative flex-shrink-0">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover"
-        />
+    <div className="bg-zinc-900/50 rounded-xl shadow-lg overflow-hidden transition-all duration-300 border border-zinc-700 flex flex-col">
+      <div className="h-48 bg-zinc-300 relative flex-shrink-0">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
 
         {isPrivate && (
           <div className="absolute top-2 right-2 bg-amber-500 text-zinc-300 px-2 py-1 rounded-md text-xs font-semibold flex items-center space-x-1">
@@ -42,13 +38,9 @@ export default function Project({
       </div>
 
       <div className="p-5 flex-1 flex flex-col">
-        <h3 className="text-lg font-medium text-zinc-300 mb-2">
-          {title}
-        </h3>
+        <h3 className="text-lg font-medium text-zinc-300 mb-2">{title}</h3>
 
-        <p className="text-sm text-zinc-400 mb-3 line-clamp-2">
-          {description}
-        </p>
+        <p className="text-sm text-zinc-400 mb-3 line-clamp-2">{description}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.slice(0, 3).map((tag, index) => (
@@ -73,7 +65,7 @@ export default function Project({
                 href={websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 hover:scale-[1.02] text-sm w-full font-medium bg-slate-800 hover:bg-slate-700 text-zinc-300"
+                className="inline-flex items-center justify-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 text-sm w-full font-medium bg-zinc-800 hover:bg-zinc-700 text-zinc-300"
                 onClick={(e) => e.stopPropagation()}
               >
                 <svg
@@ -97,10 +89,10 @@ export default function Project({
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center justify-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 hover:scale-[1.02] text-sm w-full font-medium ${
+                className={`inline-flex items-center justify-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 text-sm w-full font-medium ${
                   isPrivate
                     ? "bg-amber-600 hover:bg-amber-700 text-zinc-300"
-                    : "bg-slate-800 hover:bg-slate-700 text-zinc-300"
+                    : "bg-zinc-800 hover:bg-zinc-700 text-zinc-300"
                 }`}
                 onClick={(e) => e.stopPropagation()}
               >
