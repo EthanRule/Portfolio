@@ -42,14 +42,8 @@ export default function Academics() {
   ];
 
   return (
-    <section id="academics" className="py-16 px-4 sm:px-6 lg:px-8 bg-zinc-950 ">
+    <section id="academics" className="pb-16 px-4 sm:px-6 lg:px-8 bg-zinc-950 ">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-zinc-300 mb-4">
-            Academic Background ✏️
-          </h2>
-        </div>
-
         <div className="bg-zinc-900/50 px-6 py-6 rounded-t-xl border-t border-zinc-700">
           <div className="grid md:grid-cols-2 grid-cols-1 gap-8 ">
             {courseCategories.map((category, categoryIndex) => (

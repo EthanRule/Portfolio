@@ -31,7 +31,7 @@ export default function Header() {
           isScrolled
             ? "translate-y-0 opacity-100"
             : "-translate-y-full opacity-0"
-        } bg-slate-900/95 backdrop-blur-md border-b border-slate-700/50`}
+        } bg-zinc-900 border-b border-zinc-700`}
       >
         <div className="px-6 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between h-16">
@@ -73,7 +73,7 @@ export default function Header() {
           <a
             href="/resume/ethan_rule_resume.pdf"
             download="ethan_rule_resume.pdf"
-            className="bg-slate-900 hover:bg-slate-600 border border-slate-600 hover:border-slate-500 text-white p-2 rounded-lg transition-all duration-300 hover:scale-105 inline-flex items-center group shadow-lg"
+            className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-zinc-500 text-zinc-300 p-2 rounded-lg transition-all duration-300 hover:scale-105 inline-flex items-center group shadow-lg"
             title="Download Resume"
           >
             <svg
