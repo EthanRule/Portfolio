@@ -13,14 +13,14 @@ export default function AboutMe() {
               alt="Ethan Rule - Software Engineer"
               width={280}
               height={280}
-              className="rounded-2xl shadow-lg object-cover"
+              className="rounded-xl object-cover"
               priority
             />
           </div>
 
           {/* About Text */}
           <div className="md:col-span-2 space-y-6">
-            <div className="bg-zinc-900/50 p-6 rounded-lg border border-zinc-700">
+            <div className="bg-zinc-950 p-6 rounded-tr-xl rounded-bl-xl border border-zinc-700">
               <p className="text-zinc-300 leading-relaxed">
                 Hey there 👋, I'm Ethan. I write full-stack applications with
                 Next.js, Typescript, React, Tailwind, and host on services like
@@ -28,7 +28,7 @@ export default function AboutMe() {
                 covering various domains.
               </p>
             </div>
-            <div className="bg-zinc-900/50 p-6 rounded-lg border border-zinc-700">
+            <div className="bg-zinc-950 p-6 rounded-tr-xl rounded-bl-xl border border-zinc-700">
               <p className="text-zinc-300 leading-relaxed">
                 In my spare time I have a passion hobby playing World of
                 Warcraft (Balance Druid{" "}

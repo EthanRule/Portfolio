@@ -19,7 +19,7 @@ export default function Project({
   isPrivate = false,
 }: ProjectProps) {
   return (
-    <div className="bg-zinc-900/50 rounded-xl shadow-lg overflow-hidden transition-all duration-300 border border-zinc-700 flex flex-col">
+    <div className="bg-zinc-900/50 rounded-tr-xl rounded-bl-xl shadow-lg overflow-hidden transition-all duration-300 border border-zinc-700 flex flex-col">
       <div className="h-48 bg-zinc-300 relative flex-shrink-0">
         <img src={image} alt={title} className="w-full h-full object-cover" />
 

@@ -23,6 +23,16 @@ export default function FeaturedProjects() {
       isPrivate: false,
       githubUrl: "https://github.com/EthanRule/RefineGen",
     },
+    {
+      id: 3,
+      title: "SpreadsheetEngine",
+      description: "Excel like spreadsheet engine",
+      tags: [".NET"],
+      isPrivate: false,
+      image: "/Project-Images/spdreadsheet",
+      githubUrl:
+        "https://github.com/EthanRule/spreadsheet_application/tree/main",
+    },
   ];
 
   return (
