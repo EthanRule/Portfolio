@@ -1,25 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutMe() {
   return (
     <section id="about" className="pt-16 px-4 sm:px-6 lg:px-8 bg-zinc-950">
       <div className="max-w-4xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-12 items-start">
-          {/* Profile Picture */}
-          <div className="flex justify-center md:justify-start">
-            <Image
-              src="/Me/pfp.jpg"
-              alt="Ethan Rule - Software Engineer"
-              width={280}
-              height={280}
-              className="rounded-xl object-cover"
-              priority
-            />
-          </div>
-
-          {/* About Text */}
-          <div className="md:col-span-2 space-y-6">
+        <div className="space-y-6">
             <div className="bg-zinc-950 p-6 rounded-tr-xl rounded-bl-xl border border-zinc-700">
               <p className="text-zinc-300 leading-relaxed">
                 Hey there 👋, I'm Ethan. I write full-stack applications with

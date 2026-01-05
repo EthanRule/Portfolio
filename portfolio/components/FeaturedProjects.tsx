@@ -36,7 +36,7 @@ export default function FeaturedProjects() {
   ];
 
   return (
-    <section id="projects" className="relative py-16 pb-20 bg-zinc-950">
+    <section id="projects" className="relative py-16 pb-32 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/*<Toolkit />*/}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
