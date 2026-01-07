@@ -25,13 +25,23 @@ export default function FeaturedProjects() {
     },
     {
       id: 3,
-      title: "SpreadsheetEngine",
+      title: "Spreadsheet Engine",
       description: "Excel like spreadsheet engine",
       tags: [".NET"],
       isPrivate: false,
-      image: "/Project-Images/spdreadsheet",
+      image: "/Project-Images/spreadsheetEngine.jpg",
       githubUrl:
         "https://github.com/EthanRule/spreadsheet_application/tree/main",
+    },
+    {
+      id: 4,
+      title: "Rust Database Engine",
+      description: "Document oriented database engine",
+      tags: ["Rust"],
+      isPrivate: false,
+      image: "/Project-Images/rust.png",
+      githubUrl:
+        "https://github.com/EthanRule/rustdb",
     },
   ];
 
@@ -39,7 +49,7 @@ export default function FeaturedProjects() {
     <section id="projects" className="relative py-16 pb-32 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/*<Toolkit />*/}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {projects.map((project) => (
             <div key={project.id} className="flex justify-center">
               <div className="w-full max-w-lg">
