@@ -658,6 +658,13 @@ export default function AboutMe() {
               LeetCode daily and work through an Unreal Engine C++ course to
               ensure I'm learning the proper ways of game development.
             </p>
+            <p className="text-zinc-300 leading-relaxed">
+              Beyond programming, I'm also skilled in content creation tools
+              like Premiere Pro and Photoshop, which I use to produce and edit
+              gaming content. I've built a community of over 13,000 followers
+              on Twitch and more than 4,000 subscribers on YouTube, where I
+              share gameplay, tutorials, and insights into Balance Druid PvP.
+            </p>
           </div>
 
           {/* Current Work */}
