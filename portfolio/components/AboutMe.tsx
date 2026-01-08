@@ -662,8 +662,25 @@ export default function AboutMe() {
               Beyond programming, I'm also skilled in content creation tools
               like Premiere Pro and Photoshop, which I use to produce and edit
               gaming content. I've built a community of over 13,000 followers
-              on Twitch and more than 4,000 subscribers on YouTube, where I
-              share gameplay, tutorials, and insights into Balance Druid PvP.
+              on{" "}
+              <Link
+                href="https://www.twitch.tv/rudarz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 font-bold hover:text-purple-300"
+              >
+                Twitch
+              </Link>{" "}
+              and more than 4,000 subscribers on{" "}
+              <Link
+                href="https://www.youtube.com/@Rudarz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-red-500 font-bold hover:text-red-400"
+              >
+                YouTube
+              </Link>
+              , where I share gameplay, tutorials, and insights into Balance Druid PvP.
             </p>
           </div>
 
