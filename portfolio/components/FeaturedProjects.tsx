@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Project as ProjectType } from "@/types/project";
 import Project from "./Project";
 import Toolkit from "@/components/Toolkit/TechnicalSkills";
+import Tetris from "./Tetris";
 
 export default function FeaturedProjects() {
   const projects: ProjectType[] = [
@@ -47,9 +48,8 @@ export default function FeaturedProjects() {
 
   return (
     <section id="projects" className="relative py-16 pb-32 bg-zinc-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/*<Toolkit />*/}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-4xl mx-auto">
           {projects.map((project) => (
             <div key={project.id} className="flex justify-center">
               <div className="w-full max-w-lg">
@@ -66,6 +66,9 @@ export default function FeaturedProjects() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="absolute top-1/2 left-1/2 hidden lg:block" style={{ transform: 'translateY(-50%) translateX(calc(28rem + 4rem))' }}>
+          <Tetris />
         </div>
       </div>
     </section>
