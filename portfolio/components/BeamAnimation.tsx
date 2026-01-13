@@ -8,10 +8,10 @@ export default function BeamAnimation() {
       {squares.map((i) => (
         <div
           key={i}
-          className="w-1.5 h-1.5 bg-zinc-800 animate-square-glow flex-shrink-0"
+          className="w-1.5 h-1.5 bg-zinc-800 animate-square-wave flex-shrink-0"
           style={{
-            animationDelay: `${(i / 500) * 8}s`,
-            animationDuration: '8s'
+            animationDelay: `${(i / 500) * 4}s`,
+            animationDuration: '4s'
           }}
         />
       ))}

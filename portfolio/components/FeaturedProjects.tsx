@@ -8,6 +8,13 @@ export default function FeaturedProjects() {
   const projects: ProjectType[] = [
     {
       id: 1,
+      title: "BoxSurvivor",
+      description: "Top Down Bullet Hell Game.",
+      tags: ["C++", "Unreal Engine"],
+      image: "/Project-Images/BoxSurvivor.png",
+    },
+    {
+      id: 2,
       title: "Rudarz.com",
       description: "World of Warcraft Balance Druid PvP course.",
       tags: ["Next.js", "Stripe", "Vercel"],
@@ -16,7 +23,7 @@ export default function FeaturedProjects() {
     },
 
     {
-      id: 2,
+      id: 3,
       title: "RefineGen",
       description: "Context assisted AI image generator.",
       tags: ["Next.js", "Stripe", "AWS"],
@@ -25,7 +32,7 @@ export default function FeaturedProjects() {
       githubUrl: "https://github.com/EthanRule/RefineGen",
     },
     {
-      id: 3,
+      id: 4,
       title: "Spreadsheet Engine",
       description: "Excel like spreadsheet engine",
       tags: [".NET"],
@@ -35,7 +42,7 @@ export default function FeaturedProjects() {
         "https://github.com/EthanRule/spreadsheet_application/tree/main",
     },
     {
-      id: 4,
+      id: 5,
       title: "Rust Database Engine",
       description: "Document oriented database engine",
       tags: ["Rust"],
@@ -44,12 +51,59 @@ export default function FeaturedProjects() {
       githubUrl:
         "https://github.com/EthanRule/rustdb",
     },
+    {
+      id: 6,
+      title: "Lockout",
+      description: "Kick Predictor",
+      tags: ["Lua"],
+      isPrivate: false,
+      image: "/Project-Images/precog.png",
+      githubUrl:
+        "https://github.com/EthanRule/lockout",
+    },
+    {
+      id: 7,
+      title: "AI ShotTracker",
+      description: "Basketball Shot Tracker",
+      tags: ["Kotlin"],
+      isPrivate: false,
+      image: "/Project-Images/ai-shot-tracker.png",
+    },
+    {
+      id: 8,
+      title: "AutoVideos",
+      description: "Automated Video Editor",
+      tags: ["Python"],
+      isPrivate: false,
+      image: "/Project-Images/python.png",
+      githubUrl:
+        "https://github.com/EthanRule/AutoVideos",
+    },
+    {
+      id: 9,
+      title: "WhisperMacros",
+      description: "Automated Networking System",
+      tags: ["Lua"],
+      isPrivate: false,
+      image: "/Project-Images/whispermacros.png",
+      githubUrl:
+        "https://github.com/EthanRule/WhisperMacros",
+    },
+    {
+      id: 10,
+      title: "wow-stats",
+      description: "World of Warcraft Statistics website",
+      tags: ["Typescript"],
+      isPrivate: false,
+      image: "/Project-Images/wow-stats.png",
+      websiteUrl: "https://wow-stats.vercel.app/",
+    },
   ];
 
   return (
     <section id="projects" className="relative py-16 pb-32 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
           {projects.map((project) => (
             <div key={project.id} className="flex justify-center">
               <div className="w-full max-w-lg">
@@ -67,7 +121,7 @@ export default function FeaturedProjects() {
             </div>
           ))}
         </div>
-        <div className="absolute top-1/2 left-1/2 hidden lg:block" style={{ transform: 'translateY(-50%) translateX(calc(28rem + 4rem))' }}>
+        <div className="absolute top-1/2 left-1/2 hidden" style={{ transform: 'translateY(-50%) translateX(calc(28rem + 4rem))' }}>
           <Tetris />
         </div>
       </div>
