@@ -8,7 +8,7 @@ export default function FeaturedProjects() {
   const projects: ProjectType[] = [
     {
       id: 1,
-      title: "BoxSurvivor",
+      title: "BoxSurvivor (Currently Working On)",
       description: "Top Down Bullet Hell Game.",
       tags: ["C++", "Unreal Engine"],
       image: "/Project-Images/BoxSurvivor.png",
