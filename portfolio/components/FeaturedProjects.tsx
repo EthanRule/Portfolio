@@ -11,7 +11,11 @@ export default function FeaturedProjects() {
       title: "BoxSurvivor (Currently Working On)",
       description: "Top Down Bullet Hell Game.",
       tags: ["C++", "Unreal Engine"],
-      image: "/Project-Images/BoxSurvivor.png",
+      image: "/Project-Images/BoxSurvivor2.png",
+      images: [
+        "/Project-Images/BoxSurvivor2.png",
+        "/Project-Images/BoxSurvivor1.png",
+      ],
     },
     {
       id: 2,
@@ -113,6 +117,7 @@ export default function FeaturedProjects() {
                   description={project.description}
                   tags={project.tags}
                   image={project.image}
+                  images={project.images}
                   githubUrl={project.githubUrl}
                   websiteUrl={project.websiteUrl}
                   isPrivate={project.isPrivate}

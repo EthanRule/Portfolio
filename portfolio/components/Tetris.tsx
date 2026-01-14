@@ -748,7 +748,7 @@ export default function Tetris() {
       <div className="relative p-4 bg-zinc-900/50 border border-zinc-700/50 rounded-lg backdrop-blur-sm">
         <div className="w-48 h-96 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/20 to-transparent pointer-events-none rounded" />
-          <div className="grid grid-cols-10 gap-0.5 h-full p-1">
+          <div className="grid grid-cols-10 gap-1 h-full p-1">
           {gameState.board.map((row, rowIndex) =>
             row.map((cell, colIndex) => {
               const isFallingPiece =
@@ -843,10 +843,10 @@ export default function Tetris() {
                 return (
                   <div
                     key={`${rowIndex}-${colIndex}`}
-                    className={`relative rounded-sm transition-all duration-75 ${isFallingPiece ? 'animate-pulse' : ''}`}
+                    className={`relative rounded transition-all duration-75 ${isFallingPiece ? 'animate-pulse' : ''}`}
                     style={{
                       backgroundColor: colors?.bg || "#71717a",
-                      border: `1px solid ${colors?.border || "#52525b"}`,
+                      border: `2px solid ${colors?.border || "#52525b"}`,
                       backgroundImage: colors
                         ? `radial-gradient(circle at 30% 30%, ${colors.shine} 0%, ${colors.shine} 40%, ${colors.bg} 60%, ${colors.bg} 100%)`
                         : undefined,
