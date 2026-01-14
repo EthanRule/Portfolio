@@ -25,42 +25,8 @@ export default function Header() {
 
   return (
     <>
-      {/* Sticky Navigation Header */}
-      <nav
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-full opacity-0"
-        } bg-zinc-900 border-b border-zinc-700`}
-      >
-        <div className="px-6 sm:px-8 lg:px-12">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo/Name - Aligned to left with margin */}
-            <div className="text-xl font-bold text-white ml-4">Ethan Rule</div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                className="text-slate-300 hover:text-white transition-colors duration-200"
-                onClick={() => scrollToSection("about")}
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
+      {/* Sticky Navigation Header - Disabled */}
+      <nav className="hidden">
       </nav>
 
       {/* Main Header */}
@@ -137,7 +103,7 @@ export default function Header() {
             Ethan Rule
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 font-mono">
-            CS Graduate • Software Engineer
+            CS Graduate • Game Developer
           </p>
         </div>
       </header>

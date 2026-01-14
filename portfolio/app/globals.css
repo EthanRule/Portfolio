@@ -43,17 +43,29 @@ body {
 }
 
 @keyframes square-wave {
-  0%, 100% {
+  0% {
     background-color: rgb(39 39 42);
-    opacity: 0.3;
   }
-  50% {
-    background-color: rgb(34 197 94);
-    opacity: 1;
-    box-shadow: 0 0 8px rgb(34 197 94);
+  3% {
+    background-color: rgb(96 165 250);
+  }
+  8% {
+    background-color: rgb(39 39 42);
+  }
+  100% {
+    background-color: rgb(39 39 42);
   }
 }
 
 .animate-square-wave {
   animation: square-wave 4s ease-in-out infinite;
+}
+
+.border-sweep-box {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.project-card:hover .border-sweep-box {
+  opacity: 1;
 }
