@@ -43,15 +43,26 @@ export default function Project({
   const content = (
     <div className="bg-zinc-900/50 overflow-hidden border border-zinc-700 flex flex-col cursor-pointer relative project-card">
       <div className="absolute inset-0 pointer-events-none border-2 border-blue-400 border-sweep-box z-50" />
-      <div className="h-64 bg-zinc-300 relative group">
-        <img src={allImages[currentIndex]} alt={title} className="w-full h-full object-cover" />
+      <div className="h-64 bg-zinc-950 relative group">
+        {allImages.map((img, idx) => (
+          <img 
+            key={idx}
+            src={img} 
+            alt={title} 
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${idx === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+          />
+        ))}
         {hasMultiple && (
           <div className="absolute bottom-0 left-0 right-0 flex items-center bg-zinc-950 gap-2">
-            <button onClick={handlePrev} className="text-white text-lg leading-none hover:text-zinc-300 hover:bg-zinc-800 hover:text-xl px-2 flex items-center justify-center flex-shrink-0 bg-zinc-900 transition-all">‹</button>
+            <button onClick={handlePrev} className="text-white text-lg leading-none hover:text-zinc-300 hover:bg-zinc-800 px-2 flex items-center justify-center flex-shrink-0 bg-zinc-900 transition-colors">‹</button>
             {allImages.map((_, idx) => (
-              <div key={idx} className={`h-1.5 rounded-sm flex-1 ${idx === currentIndex ? 'bg-blue-400' : 'bg-zinc-500'}`} />
+              <button 
+                key={idx} 
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrentIndex(idx); }}
+                className={`h-1.5 rounded-sm flex-1 transition-colors hover:opacity-80 ${idx === currentIndex ? 'bg-blue-400' : 'bg-zinc-500 hover:bg-zinc-400'}`} 
+              />
             ))}
-            <button onClick={handleNext} className="text-white text-lg leading-none hover:text-zinc-300 hover:bg-zinc-800 hover:text-xl px-2 flex items-center justify-center flex-shrink-0 bg-zinc-900 transition-all">›</button>
+            <button onClick={handleNext} className="text-white text-lg leading-none hover:text-zinc-300 hover:bg-zinc-800 px-2 flex items-center justify-center flex-shrink-0 bg-zinc-900 transition-colors">›</button>
           </div>
         )}
       </div>
