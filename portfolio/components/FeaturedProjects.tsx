@@ -13,6 +13,7 @@ export default function FeaturedProjects() {
       tags: ["C++", "Unreal Engine"],
       image: "/Project-Images/BoxSurvivor2.png",
       images: [
+        "/Project-Images/BoxSurvivor3.png",
         "/Project-Images/BoxSurvivor2.png",
         "/Project-Images/BoxSurvivor1.png",
       ],
