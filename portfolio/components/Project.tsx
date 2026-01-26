@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface ProjectProps {
   id: number;
@@ -11,6 +11,7 @@ interface ProjectProps {
   githubUrl?: string;
   websiteUrl?: string;
   isPrivate?: boolean;
+  disableHover?: boolean;
 }
 
 export default function Project({
@@ -22,11 +23,21 @@ export default function Project({
   githubUrl,
   websiteUrl,
   isPrivate = false,
+  disableHover = false,
 }: ProjectProps) {
   const allImages = images && images.length > 0 ? images : [image];
   const [currentIndex, setCurrentIndex] = useState(0);
   const hasMultiple = allImages.length > 1;
   const url = websiteUrl || githubUrl;
+
+  useEffect(() => {
+    if (disableHover && hasMultiple) {
+      const interval = setInterval(() => {
+        setCurrentIndex((i) => (i === allImages.length - 1 ? 0 : i + 1));
+      }, 10000);
+      return () => clearInterval(interval);
+    }
+  }, [disableHover, hasMultiple, allImages.length]);
 
   const handlePrev = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -41,15 +52,15 @@ export default function Project({
   };
   
   const content = (
-    <div className="bg-zinc-900/50 overflow-hidden border border-zinc-700 flex flex-col cursor-pointer relative project-card">
-      <div className="absolute inset-0 pointer-events-none border-2 border-blue-400 border-sweep-box z-50" />
+    <div className={`bg-zinc-900/50 overflow-hidden border border-zinc-700 flex flex-col ${disableHover ? '' : 'cursor-pointer'} relative project-card`}>
+      {!disableHover && <div className="absolute inset-0 pointer-events-none border-2 border-blue-400 border-sweep-box z-50" />}
       <div className="h-64 bg-zinc-950 relative group">
         {allImages.map((img, idx) => (
           <img 
             key={idx}
             src={img} 
             alt={title} 
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${idx === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${idx === currentIndex ? 'opacity-100' : 'opacity-0'}`}
           />
         ))}
         {hasMultiple && (

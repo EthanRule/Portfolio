@@ -4,6 +4,21 @@ import ParticleConstellation from "./ParticleConstellationGraph";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [monthsExperience, setMonthsExperience] = useState(0);
+
+  useEffect(() => {
+    const calculateExperience = () => {
+      const startDate = new Date(2026, 0, 1);
+      const currentDate = new Date();
+      const diffTime = currentDate.getTime() - startDate.getTime();
+      const diffMonths = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30.44));
+      setMonthsExperience(Math.max(0, diffMonths));
+    };
+
+    calculateExperience();
+    const interval = setInterval(calculateExperience, 1000 * 60 * 60 * 24);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +45,7 @@ export default function Header() {
       </nav>
 
       {/* Main Header */}
-      <header className="h-screen bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden flex items-center justify-center">
+      <header className="h-screen bg-black relative overflow-hidden flex items-center justify-center">
         {/* Mathematical Animation Canvas */}
         <ParticleConstellation />
 
@@ -74,6 +89,23 @@ export default function Header() {
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z" />
             </svg>
           </a>
+          {/* X (Twitter) Link */}
+          <a
+            href="https://x.com/Rudar__"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-zinc-500 text-zinc-300 p-2 rounded-lg transition-all duration-300 hover:scale-105 inline-flex items-center group shadow-lg"
+            title="X (Twitter)"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
           {/* Download Resume Button */}
           <a
             href="/resume/ethan_rule_resume.pdf"
@@ -102,8 +134,11 @@ export default function Header() {
           <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 tracking-tight">
             Ethan Rule
           </h1>
-          <p className="text-xl md:text-2xl text-slate-300 font-mono">
-            CS Graduate • Game Developer
+          <p className="text-xl md:text-2xl text-slate-300 font-sans antialiased tracking-wide">
+            Unreal Engine · Game Developer
+          </p>
+          <p className="text-sm md:text-base text-slate-400 font-sans antialiased mt-2">
+            {monthsExperience} {monthsExperience === 1 ? 'month' : 'months'} of experience
           </p>
         </div>
       </header>
