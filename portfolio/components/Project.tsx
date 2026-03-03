@@ -8,6 +8,7 @@ interface ProjectProps {
   tags: string[];
   image: string;
   images?: string[];
+  video?: string;
   githubUrl?: string;
   websiteUrl?: string;
   isPrivate?: boolean;
@@ -20,6 +21,7 @@ export default function Project({
   tags,
   image,
   images,
+  video,
   githubUrl,
   websiteUrl,
   isPrivate = false,
@@ -55,26 +57,39 @@ export default function Project({
     <div className={`bg-zinc-900/50 overflow-hidden border border-zinc-700 flex flex-col ${disableHover ? '' : 'cursor-pointer'} relative project-card`}>
       {!disableHover && <div className="absolute inset-0 pointer-events-none border-2 border-blue-400 border-sweep-box z-50" />}
       <div className="h-64 bg-zinc-950 relative group">
-        {allImages.map((img, idx) => (
-          <img 
-            key={idx}
-            src={img} 
-            alt={title} 
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${idx === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+        {video ? (
+          <video
+            src={video}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
           />
-        ))}
-        {hasMultiple && (
-          <div className="absolute bottom-0 left-0 right-0 flex items-center bg-zinc-950 gap-2">
-            <button onClick={handlePrev} className="text-white text-lg leading-none hover:text-zinc-300 hover:bg-zinc-800 px-2 flex items-center justify-center flex-shrink-0 bg-zinc-900 transition-colors">‹</button>
-            {allImages.map((_, idx) => (
-              <button 
-                key={idx} 
-                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrentIndex(idx); }}
-                className={`h-1.5 rounded-sm flex-1 transition-colors hover:opacity-80 ${idx === currentIndex ? 'bg-blue-400' : 'bg-zinc-500 hover:bg-zinc-400'}`} 
+        ) : (
+          <>
+            {allImages.map((img, idx) => (
+              <img
+                key={idx}
+                src={img}
+                alt={title}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${idx === currentIndex ? 'opacity-100' : 'opacity-0'}`}
               />
             ))}
-            <button onClick={handleNext} className="text-white text-lg leading-none hover:text-zinc-300 hover:bg-zinc-800 px-2 flex items-center justify-center flex-shrink-0 bg-zinc-900 transition-colors">›</button>
-          </div>
+            {hasMultiple && (
+              <div className="absolute bottom-0 left-0 right-0 flex items-center bg-zinc-950 gap-2">
+                <button onClick={handlePrev} className="text-white text-lg leading-none hover:text-zinc-300 hover:bg-zinc-800 px-2 flex items-center justify-center flex-shrink-0 bg-zinc-900 transition-colors">‹</button>
+                {allImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrentIndex(idx); }}
+                    className={`h-1.5 rounded-sm flex-1 transition-colors hover:opacity-80 ${idx === currentIndex ? 'bg-blue-400' : 'bg-zinc-500 hover:bg-zinc-400'}`}
+                  />
+                ))}
+                <button onClick={handleNext} className="text-white text-lg leading-none hover:text-zinc-300 hover:bg-zinc-800 px-2 flex items-center justify-center flex-shrink-0 bg-zinc-900 transition-colors">›</button>
+              </div>
+            )}
+          </>
         )}
       </div>
       <div className="p-4 bg-zinc-800/50">

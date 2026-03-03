@@ -9,15 +9,11 @@ export default function FeaturedProjects() {
   const projects: ProjectType[] = [
     {
       id: 1,
-      title: "BoxSurvivor (Currently Working On)",
+      title: "Karternia (Currently Working On)",
       description: "Top Down Bullet Hell Game.",
       tags: ["C++", "Unreal Engine"],
       image: "/Project-Images/BoxSurvivor2.png",
-      images: [
-        "/Project-Images/BoxSurvivor3.png",
-        "/Project-Images/BoxSurvivor2.png",
-        "/Project-Images/BoxSurvivor1.png",
-      ],
+      video: "/Videos/BoxSurvivorGameplay.mp4",
     },
     {
       id: 2,
@@ -106,8 +102,8 @@ export default function FeaturedProjects() {
     },
   ];
 
-  const boxSurvivor = projects.find(p => p.title.includes("BoxSurvivor"));
-  const previousProjects = projects.filter(p => !p.title.includes("BoxSurvivor"));
+  const boxSurvivor = projects.find(p => p.title.includes("Karternia"));
+  const previousProjects = projects.filter(p => !p.title.includes("Karternia"));
 
   return (
     <section id="projects" className="relative py-16 pb-32 bg-zinc-950 overflow-hidden">
@@ -121,7 +117,7 @@ export default function FeaturedProjects() {
       }} />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* BoxSurvivor */}
+        {/* Karternia */}
         {boxSurvivor && (
           <div className="flex justify-center mb-16">
             <div className="w-full max-w-lg">
@@ -132,6 +128,7 @@ export default function FeaturedProjects() {
                 tags={boxSurvivor.tags}
                 image={boxSurvivor.image}
                 images={boxSurvivor.images}
+                video={boxSurvivor.video}
                 githubUrl={boxSurvivor.githubUrl}
                 websiteUrl={boxSurvivor.websiteUrl}
                 isPrivate={boxSurvivor.isPrivate}

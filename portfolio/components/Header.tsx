@@ -135,7 +135,7 @@ export default function Header() {
             Ethan Rule
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 font-sans antialiased tracking-wide">
-            Unreal Engine · Game Developer
+            C++ Systems Engineer · Unreal Engine
           </p>
           <p className="text-sm md:text-base text-slate-400 font-sans antialiased mt-2">
             {monthsExperience} {monthsExperience === 1 ? 'month' : 'months'} of experience
