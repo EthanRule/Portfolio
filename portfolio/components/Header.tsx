@@ -17,7 +17,7 @@ export default function Header() {
       image: "/Project-Images/BoxSurvivor2.png",
       video: "/Videos/BoxSurvivorGameplay.mp4",
       description:
-        "Top-down bullet hell game built in Unreal Engine 5 with C++. Features dynamic enemy AI, procedural wave systems, and custom visual effects.",
+        "3D roguelike video game built in Unreal Engine 5 with 95% C++. Features UE Mass + spatial hash raytrace caching system for enemy movement, spatial hash smart aim system, and ability system that heavily uses the strategy design pattern."
     },
     {
       id: 5,
@@ -25,7 +25,7 @@ export default function Header() {
       image: "/Project-Images/rust.png",
       url: "https://github.com/EthanRule/rustdb",
       description:
-        "Document-oriented database engine written in Rust. Implements a custom query language, B-tree indexing, and persistent storage with ACID guarantees.",
+        "Document-oriented database engine written in Rust. Implements B-tree indexing, persistent storage with json to bson compression, and LRU cache.",
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ export default function Header() {
       image: "/Project-Images/Rudarz.com.png",
       url: "https://rudarz.com",
       description:
-        "World of Warcraft Balance Druid PvP course platform. Subscription billing via Stripe with full video course delivery.",
+        "World of Warcraft Balance Druid PvP course platform. Billing via Stripe, and deployed on Vercel. Compresses 30 thousands hours of expertise into a 10 hour deep dive filled with challenges. Used by over 10k players, and 300+ paying customers.",
     },
     {
       id: 9,
@@ -41,14 +41,14 @@ export default function Header() {
       image: "/Project-Images/whispermacros.png",
       url: "https://github.com/EthanRule/WhisperMacros",
       description:
-        "In-game social automation system scripted in Lua for World of Warcraft. Manages whisper responses and networking workflows.",
+        "In-game social automation system scripted in Lua for World of Warcraft. Connects players together to form real teams and real connections faster than any other method. Enabling players to climb rating faster than ever before.",
     },
     {
       id: 7,
       title: "AI ShotTracker",
       image: "/Project-Images/ai-shot-tracker.png",
       description:
-        "Computer vision basketball shot tracking system using machine learning to detect shots and analyze shooting form in real time.",
+        "Computer vision basketball shot tracking app. Built with Google Mediapipe, Tensorflow, and a Pixel 3 Android phone. With over 10k images from roboflow, models were trained both on google colab and locally using a 2080 GPU. To not over or underfit, we found 25 epochs to work the best with this dataset size and our limited live testing basketball court. This was my teams capstone project.",
     },
     {
       id: 3,
@@ -56,7 +56,7 @@ export default function Header() {
       image: "/Project-Images/refinegen.png",
       url: "https://github.com/EthanRule/RefineGen",
       description:
-        "Context-assisted AI image generator with a prompt refinement pipeline, image-to-image generation, and style transfer workflows.",
+        "Context-assisted AI image generator with a prompt refinement pipeline, image-to-image generation, and style transfer workflows. Currently undeployed to prevent potential API abuse on a project that is no longer being continued.",
     },
     {
       id: 4,
@@ -64,7 +64,7 @@ export default function Header() {
       image: "/Project-Images/spreadsheetEngine.jpg",
       url: "https://github.com/EthanRule/spreadsheet_application/tree/main",
       description:
-        "Excel-like spreadsheet engine built in .NET. Supports formula parsing, cell dependency graphs, and live recalculation across sheets.",
+        "Excel-like spreadsheet engine built in .NET. Supports formula parsing, cell dependency graphs, and live recalculation across sheets. Heavily utilizes observer, command, factory, singleton, and layered deisgn patterns.",
     },
     {
       id: 6,
@@ -80,7 +80,7 @@ export default function Header() {
       image: "/Project-Images/autovideos.png",
       url: "https://github.com/EthanRule/AutoVideos",
       description:
-        "Automated video editing pipeline in Python. Processes raw footage, applies effects, and renders final cuts without manual intervention.",
+        "Automated CLI video editing pipeline in Python. Processes raw footage, applies effects, and renders final cuts without manual intervention.",
     },
     {
       id: 10,
@@ -88,7 +88,7 @@ export default function Header() {
       image: "/Project-Images/wow-stats.png",
       url: "https://wow-stats.vercel.app/",
       description:
-        "World of Warcraft statistics website aggregating player performance data from the public API with interactive charts and leaderboards.",
+        "World of Warcraft statistics website aggregating player performance to display unique data from the public Blizzard API with interactive charts and leaderboards.",
     },
   ];
 
