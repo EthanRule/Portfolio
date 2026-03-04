@@ -106,15 +106,7 @@ export default function FeaturedProjects() {
   const previousProjects = projects.filter(p => !p.title.includes("Karternia"));
 
   return (
-    <section id="projects" className="relative py-16 pb-32 bg-zinc-950 overflow-hidden">
-      {/* Grid Background */}
-      <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: `
-          linear-gradient(rgba(173, 216, 230, 0.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(173, 216, 230, 0.1) 1px, transparent 1px)
-        `,
-        backgroundSize: '50px 50px'
-      }} />
+    <section id="projects" className="relative py-16 pb-32 overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Karternia */}

@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git lfs version)",
+      "Bash(git lfs install)",
+      "Bash(git lfs track \"*.mp4\")",
+      "Bash(git add .gitattributes portfolio/public/Videos/BoxSurvivorGameplay.mp4)",
+      "Bash(git lfs status)",
+      "Bash(git add portfolio/components/Header.tsx portfolio/components/FeaturedProjects.tsx portfolio/components/Project.tsx portfolio/types/project.ts)",
+      "Bash(git commit:*)",
+      "Bash(git push origin main)"
+    ]
+  }
+}

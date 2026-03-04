@@ -61,6 +61,16 @@ body {
   animation: square-wave 4s ease-in-out infinite;
 }
 
+@keyframes wordFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-word {
+  animation: wordFadeIn 1.05s ease forwards;
+  opacity: 0;
+}
+
 .border-sweep-box {
   opacity: 0;
   transition: opacity 0.5s ease-out;

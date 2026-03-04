@@ -10,8 +10,8 @@ const GRID_COLS = 120;
 const GRID_ROWS = 80;
 
 export default function ParticleConstellation({
-  className = "absolute inset-0 w-full h-full pointer-events-none opacity-30",
-  style = { mixBlendMode: "screen" as const },
+  className = "absolute inset-0 w-full h-full pointer-events-none opacity-70",
+  style = {},
 }: ParticleConstellationProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -27,8 +27,8 @@ export default function ParticleConstellation({
     let animationFrameId: number;
     let time = 0;
     let lastUpdate = 0;
-    const grassColor = `96, 165, 250`;
-    const gridColor = `173, 216, 230`;
+    const grassColor = `0, 0, 0`;
+    const gridColor = `0, 0, 0`;
 
     const resizeCanvas = () => {
       canvas.width = canvas.offsetWidth;
@@ -101,7 +101,7 @@ export default function ParticleConstellation({
           const x = col * cellWidth;
           const y = row * cellHeight;
           
-          ctx.fillStyle = `rgba(${grassColor}, ${0.4 + intensity * 0.4})`;
+          ctx.fillStyle = `rgba(${grassColor}, ${intensity * 0.9})`;
           ctx.fillRect(x, y, cellWidth, cellHeight);
         }
       }
@@ -110,7 +110,7 @@ export default function ParticleConstellation({
     const animate = (currentTime: number) => {
       if (lastUpdate === 0) lastUpdate = currentTime;
       const deltaTime = (currentTime - lastUpdate) / 1000;
-      time += deltaTime * 0.5;
+      time += deltaTime * 0.8;
       lastUpdate = currentTime;
       drawGrid();
       animationFrameId = requestAnimationFrame(animate);
@@ -136,5 +136,5 @@ export default function ParticleConstellation({
     };
   }, []);
 
-  return <canvas ref={canvasRef} className={className} style={{ ...style, filter: 'blur(8px)' }} />;
+  return <canvas ref={canvasRef} className={className} style={style} />;
 }
