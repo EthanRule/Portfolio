@@ -301,24 +301,12 @@ export default function Header() {
           <div
             className={`w-[30rem] aspect-video pointer-events-auto transition-opacity duration-300 ${fading ? "opacity-0" : "opacity-100"}`}
           >
-            {displayedProject.video ? (
-              <video
-                key={displayedProject.id}
-                src={displayedProject.video}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <img
-                key={displayedProject.id}
-                src={displayedProject.image}
-                alt={displayedProject.title}
-                className="w-full h-full object-cover"
-              />
-            )}
+            <img
+              key={displayedProject.id}
+              src={displayedProject.image}
+              alt={displayedProject.title}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
