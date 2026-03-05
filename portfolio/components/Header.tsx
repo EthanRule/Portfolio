@@ -247,24 +247,25 @@ export default function Header() {
           )}
         </div>
 
-        {/* Name - pinned top left */}
-        <div className="absolute top-8 left-8 z-10">
+        {/* Name - pinned top left (desktop only) */}
+        <div className="hidden md:block absolute top-8 left-8 z-10">
           <h1
-            className="text-4xl md:text-5xl font-bold text-white tracking-tight animate-fade-in"
+            className="text-5xl font-bold text-white tracking-tight animate-fade-in"
             style={{ animationDuration: "3s" }}
           >
             Ethan Rule
           </h1>
           <p
-            className="text-lg md:text-xl text-slate-300 font-sans antialiased tracking-wide mt-1 animate-fade-in"
+            className="text-xl text-slate-300 font-sans antialiased tracking-wide mt-1 animate-fade-in"
             style={{ animationDuration: "3s", animationDelay: "0.2s" }}
           >
             C++ Systems Engineer
           </p>
         </div>
 
+        {/* Desktop layout */}
         {/* Projects list - vertically centered left */}
-        <div className="absolute left-20 top-1/2 -translate-y-1/2 z-10 pl-4">
+        <div className="hidden md:block absolute left-20 top-1/2 -translate-y-1/2 z-10 pl-4">
           <p
             className="text-base text-slate-300 uppercase tracking-widest mb-3 animate-fade-in"
             style={{ animationDelay: "0.1s" }}
@@ -290,7 +291,7 @@ export default function Header() {
         </div>
 
         {/* Project preview - centered */}
-        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+        <div className="hidden md:flex absolute inset-0 items-center justify-center z-10 pointer-events-none">
           <div
             className={`w-[30rem] aspect-video pointer-events-auto transition-opacity duration-300 ${fading ? "opacity-0" : "opacity-100"}`}
           >
@@ -308,7 +309,7 @@ export default function Header() {
         {/* Description - absolutely positioned to the right of the centered video */}
         <div
           key={displayedId}
-          className={`absolute top-1/2 -translate-y-1/2 z-10 w-56 text-sm text-white/70 leading-relaxed transition-opacity duration-300 ${fading ? "opacity-0" : "opacity-100"}`}
+          className={`hidden md:block absolute top-1/2 -translate-y-1/2 z-10 w-56 text-sm text-white/70 leading-relaxed transition-opacity duration-300 ${fading ? "opacity-0" : "opacity-100"}`}
           style={{ left: "calc(50% + 17rem)" }}
         >
           {displayedProject.description.split(" ").map((word, i) => (
@@ -320,6 +321,65 @@ export default function Header() {
               {word}
             </span>
           ))}
+        </div>
+
+        {/* Mobile layout */}
+        <div className="md:hidden absolute inset-0 flex flex-col z-10 pt-8 px-5 pb-6">
+          {/* Name */}
+          <div className="mb-5">
+            <h1
+              className="text-4xl font-bold text-white tracking-tight animate-fade-in"
+              style={{ animationDuration: "3s" }}
+            >
+              Ethan Rule
+            </h1>
+            <p
+              className="text-lg text-slate-300 font-sans antialiased tracking-wide mt-1 animate-fade-in"
+              style={{ animationDuration: "3s", animationDelay: "0.2s" }}
+            >
+              C++ Systems Engineer
+            </p>
+          </div>
+
+          {/* Project image */}
+          <div className={`w-full aspect-video mb-4 flex-shrink-0 transition-opacity duration-300 ${fading ? "opacity-0" : "opacity-100"}`}>
+            <img
+              key={displayedProject.id}
+              src={displayedProject.image}
+              alt={displayedProject.title}
+              className="w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]"
+              ref={(el) => { if (el?.complete) el.classList.replace("opacity-0", "opacity-100"); }}
+              onLoad={(e) => e.currentTarget.classList.replace("opacity-0", "opacity-100")}
+            />
+          </div>
+
+          {/* Project title + description */}
+          <div
+            key={`mob-${displayedId}`}
+            className={`mb-5 transition-opacity duration-300 ${fading ? "opacity-0" : "opacity-100"}`}
+          >
+            <h2 className="text-white font-bold text-base mb-1">{displayedProject.title}</h2>
+            <p className="text-white/60 text-xs leading-relaxed">{displayedProject.description}</p>
+          </div>
+
+          {/* Project list - horizontal scroll */}
+          <div className="overflow-x-auto -mx-5 px-5 mt-auto">
+            <div className="flex gap-2 pb-1">
+              {projects.map((p) => (
+                <button
+                  key={p.id}
+                  onClick={() => setSelectedId(p.id)}
+                  className={`flex-shrink-0 text-xs px-3 py-1.5 border rounded transition-colors ${
+                    selectedId === p.id
+                      ? "border-white/40 text-white/40 bg-white/5"
+                      : "border-white/20 text-white/60 hover:border-white/40 hover:text-white/80"
+                  }`}
+                >
+                  {p.title}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Background credit */}

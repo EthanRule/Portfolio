@@ -60,30 +60,30 @@ export default function ParticleConstellation({
     const drawGridLines = () => {
       const cellWidth = canvas.width / GRID_COLS;
       const cellHeight = canvas.height / GRID_ROWS;
-      
+
       ctx.strokeStyle = `rgba(${gridColor}, 0.25)`;
       ctx.lineWidth = 1;
       ctx.beginPath();
-      
+
       for (let col = 1; col < GRID_COLS; col++) {
         const x = col * cellWidth;
         ctx.moveTo(x, 0);
         ctx.lineTo(x, canvas.height);
       }
-      
+
       for (let row = 1; row < GRID_ROWS; row++) {
         const y = row * cellHeight;
         ctx.moveTo(0, y);
         ctx.lineTo(canvas.width, y);
       }
-      
+
       ctx.stroke();
     };
 
     const drawGrid = () => {
       updateGrass();
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       if (!gridLinesCache) {
         drawGridLines();
         gridLinesCache = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -91,7 +91,7 @@ export default function ParticleConstellation({
       } else {
         ctx.putImageData(gridLinesCache, 0, 0);
       }
-      
+
       const cellWidth = canvas.width / GRID_COLS;
       const cellHeight = canvas.height / GRID_ROWS;
 
@@ -100,7 +100,7 @@ export default function ParticleConstellation({
           const intensity = grassGrid[row][col];
           const x = col * cellWidth;
           const y = row * cellHeight;
-          
+
           ctx.fillStyle = `rgba(${grassColor}, ${intensity * 0.9})`;
           ctx.fillRect(x, y, cellWidth, cellHeight);
         }
