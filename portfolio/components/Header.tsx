@@ -77,7 +77,7 @@ export default function Header() {
     {
       id: 8,
       title: "AutoVideos",
-      image: "/Project-Images/autovideos.png",
+      image: "/Project-Images/AutoVideos.png",
       url: "https://github.com/EthanRule/AutoVideos",
       description:
         "Automated CLI video editing pipeline in Python. Processes raw footage, applies effects, and renders final cuts without manual intervention.",
@@ -94,6 +94,15 @@ export default function Header() {
 
   const selectedProject = projects.find((p) => p.id === selectedId)!;
   const displayedProject = projects.find((p) => p.id === displayedId)!;
+
+  useEffect(() => {
+    projects.forEach((p) => {
+      if (p.image) {
+        const img = new window.Image();
+        img.src = p.image;
+      }
+    });
+  }, []);
 
   useEffect(() => {
     if (selectedId === displayedId) return;
@@ -264,15 +273,19 @@ export default function Header() {
 
         {/* Projects list - vertically centered left */}
         <div className="absolute left-20 top-1/2 -translate-y-1/2 z-10 pl-4">
-          <p className="text-base text-slate-300 uppercase tracking-widest mb-3">
+          <p
+            className="text-base text-slate-300 uppercase tracking-widest mb-3 animate-fade-in"
+            style={{ animationDelay: "0.1s" }}
+          >
             Projects
           </p>
           <ul className="space-y-2.5">
-            {projects.map((p) => (
+            {projects.map((p, i) => (
               <li
                 key={p.id}
                 onClick={() => setSelectedId(p.id)}
-                className="flex items-center pl-2 border-l-2 border-transparent hover:border-white transition-all duration-200 hover:scale-105 origin-left cursor-pointer"
+                className="flex items-center pl-2 border-l-2 border-transparent hover:border-white transition-all duration-200 hover:scale-105 origin-left cursor-pointer animate-fade-in"
+                style={{ animationDelay: `${0.2 + i * 0.06}s` }}
               >
                 <span
                   className={`text-sm font-bold transition-colors ${selectedId === p.id ? "text-white/30" : "text-white/60 hover:text-white/90"}`}

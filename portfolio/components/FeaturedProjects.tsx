@@ -77,7 +77,7 @@ export default function FeaturedProjects() {
       description: "Automated Video Editor",
       tags: ["Python"],
       isPrivate: false,
-      image: "/Project-Images/python.png",
+      image: "/Project-Images/AutoVideos.png",
       githubUrl:
         "https://github.com/EthanRule/AutoVideos",
     },
