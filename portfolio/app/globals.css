@@ -86,17 +86,19 @@ body {
   opacity: 0;
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to   { width: 100%; }
+@keyframes menuItemFadeOut {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(16px); }
+}
+
+.animate-menu-item-out {
+  animation: menuItemFadeOut 0.4s ease forwards;
 }
 
 .animate-typing {
-  overflow: hidden;
-  white-space: nowrap;
-  width: 0;
-  animation: typing 1.2s steps(26) forwards;
-  animation-delay: 10s;
+  opacity: 0;
+  animation: wordFadeIn 1s ease forwards;
+  animation-delay: 7s;
 }
 
 .border-sweep-box {
