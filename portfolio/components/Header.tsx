@@ -313,7 +313,7 @@ export default function Header() {
         </div>
 
         {/* Background credit */}
-        <div className="absolute bottom-3 right-4 z-10 text-xs text-white/15 select-none">
+        <div className="absolute bottom-3 right-4 z-10 text-xs text-white/15 select-none animate-typing">
           Background by BlackDevilx
         </div>
       </header>
