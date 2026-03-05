@@ -29,6 +29,7 @@ export default function Project({
 }: ProjectProps) {
   const allImages = images && images.length > 0 ? images : [image];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
   const hasMultiple = allImages.length > 1;
   const url = websiteUrl || githubUrl;
 
@@ -73,7 +74,8 @@ export default function Project({
                 key={idx}
                 src={img}
                 alt={title}
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${idx === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${idx === currentIndex && loadedImages.has(idx) ? 'opacity-100' : 'opacity-0'}`}
+                onLoad={() => setLoadedImages(prev => new Set([...prev, idx]))}
               />
             ))}
             {hasMultiple && (

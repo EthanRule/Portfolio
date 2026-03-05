@@ -9,6 +9,7 @@ export default function Header() {
   const [displayedId, setDisplayedId] = useState(1);
   const [fading, setFading] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [bgLoaded, setBgLoaded] = useState(false);
 
   const projects = [
     {
@@ -153,12 +154,13 @@ export default function Header() {
       {/* Main Header */}
       <header
         className="min-h-screen bg-black relative flex flex-col overflow-hidden"
-        style={{
-          backgroundImage: "url('/Project-Images/background.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
       >
+        <img
+          src="/Project-Images/background.jpg"
+          aria-hidden="true"
+          onLoad={() => setBgLoaded(true)}
+          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-[5000ms] ${bgLoaded ? "opacity-100" : "opacity-0"}`}
+        />
         {/* Mathematical Animation Canvas */}
         <ParticleConstellation />
 
@@ -305,7 +307,8 @@ export default function Header() {
               key={displayedProject.id}
               src={displayedProject.image}
               alt={displayedProject.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover opacity-0 transition-opacity duration-500"
+              onLoad={(e) => e.currentTarget.classList.replace("opacity-0", "opacity-100")}
             />
           </div>
         </div>

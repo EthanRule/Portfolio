@@ -140,10 +140,11 @@ export default function FeaturedProjects() {
               const content = (
                 <div className="relative group">
                   <div className="w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden border border-zinc-700 transition-all duration-300 hover:scale-[1.02] cursor-pointer bg-zinc-900/50">
-                    <img 
-                      src={project.image} 
+                    <img
+                      src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover opacity-0 transition-opacity duration-500"
+                      onLoad={(e) => e.currentTarget.classList.replace("opacity-0", "opacity-100")}
                     />
                   </div>
                   <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
