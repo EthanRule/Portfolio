@@ -75,6 +75,7 @@ export default function Project({
                 src={img}
                 alt={title}
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${idx === currentIndex && loadedImages.has(idx) ? 'opacity-100' : 'opacity-0'}`}
+                ref={(el) => { if (el?.complete) setLoadedImages(prev => new Set([...prev, idx])); }}
                 onLoad={() => setLoadedImages(prev => new Set([...prev, idx]))}
               />
             ))}

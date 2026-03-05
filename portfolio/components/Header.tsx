@@ -67,14 +67,6 @@ export default function Header() {
         "Excel-like spreadsheet engine built in .NET. Supports formula parsing, cell dependency graphs, and live recalculation across sheets. Heavily utilizes observer, command, factory, singleton, and layered deisgn patterns.",
     },
     {
-      id: 6,
-      title: "Lockout",
-      image: "/Project-Images/lockout.png",
-      url: "https://github.com/EthanRule/lockout",
-      description:
-        "WoW PvP interrupt timing Lua addon. Analyzes enemy cast patterns to predict optimal kick windows and maximize spell lockout uptime.",
-    },
-    {
       id: 8,
       title: "AutoVideos",
       image: "/Project-Images/AutoVideos.png",
@@ -89,6 +81,14 @@ export default function Header() {
       url: "https://wow-stats.vercel.app/",
       description:
         "World of Warcraft statistics website aggregating player performance to display unique data from the public Blizzard API with interactive charts and leaderboards.",
+    },
+    {
+      id: 6,
+      title: "Lockout",
+      image: "/Project-Images/lockout.png",
+      url: "https://github.com/EthanRule/lockout",
+      description:
+        "WoW PvP interrupt timing Lua addon. Analyzes enemy cast patterns to predict optimal kick windows and maximize spell lockout uptime.",
     },
   ];
 
@@ -289,6 +289,7 @@ export default function Header() {
               src={displayedProject.image}
               alt={displayedProject.title}
               className="w-full h-full object-cover opacity-0 transition-opacity duration-[3000ms]"
+              ref={(el) => { if (el?.complete) el.classList.replace("opacity-0", "opacity-100"); }}
               onLoad={(e) => e.currentTarget.classList.replace("opacity-0", "opacity-100")}
             />
           </div>

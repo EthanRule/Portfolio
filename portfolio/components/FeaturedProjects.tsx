@@ -144,6 +144,7 @@ export default function FeaturedProjects() {
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover opacity-0 transition-opacity duration-500"
+                      ref={(el) => { if (el?.complete) el.classList.replace("opacity-0", "opacity-100"); }}
                       onLoad={(e) => e.currentTarget.classList.replace("opacity-0", "opacity-100")}
                     />
                   </div>
