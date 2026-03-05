@@ -14,8 +14,7 @@ export default function Header() {
     {
       id: 1,
       title: "Karternia",
-      image: "/Project-Images/BoxSurvivor2.png",
-      video: "/Videos/BoxSurvivorGameplay.mp4",
+      image: "/Project-Images/KarterniaGameplay.jpg",
       description:
         "3D roguelike video game built in Unreal Engine 5 with 95% C++. Features UE Mass + spatial hash raytrace caching system for enemy movement, spatial hash smart aim system, and ability system that heavily uses the strategy design pattern."
     },

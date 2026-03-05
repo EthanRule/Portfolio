@@ -12,8 +12,7 @@ export default function FeaturedProjects() {
       title: "Karternia (Currently Working On)",
       description: "Top Down Bullet Hell Game.",
       tags: ["C++", "Unreal Engine"],
-      image: "/Project-Images/BoxSurvivor2.png",
-      video: "/Videos/BoxSurvivorGameplay.mp4",
+      image: "/Project-Images/KarterniaGameplay.jpg",
     },
     {
       id: 2,
